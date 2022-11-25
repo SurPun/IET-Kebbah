@@ -3,7 +3,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "next": "latest",
@@ -11,6 +12,7 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "cypress": "^11.2.0",
     "@types/node": "18.11.3",
     "@types/react": "18.0.21",
     "@types/react-dom": "18.0.6",
