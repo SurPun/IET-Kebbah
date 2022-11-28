@@ -4,7 +4,10 @@ import NavBar from "../components/NavBar";
 import ButtonCom from "../components/ButtonCom";
 
 export default function Home() {
-  let randomTxt = "bla";
+  function showModal() {
+    console.log("hi");
+  }
+
   return (
     <>
       <NavBar />
@@ -13,10 +16,10 @@ export default function Home() {
         src="/IET/IET-logo.png"
         height={250}
         width={250}
-        alt=""
+        alt="IET logo"
       />
       <h1 className="text-7xl text-center">IMMERSIVE EMPATHY TRAINING</h1>
-      <ButtonCom btnName={"Start"} btnLink="/introduction" />
+      <ButtonCom btnName={"Start"} BtnOnClick={showModal} />
     </>
   );
 }
