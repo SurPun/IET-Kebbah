@@ -14,7 +14,7 @@ export default function Scenario() {
           <ScenarioTranscript />
           <ButtonCom
             btnName={"Start Survey"}
-            btnLink="" // SENDS US TO QUESTIONS
+            btnLink="questions" // SENDS US TO QUESTIONS
           />
 
           <ButtonCom
@@ -38,7 +38,7 @@ export default function Scenario() {
 
           <ButtonCom
             btnName={"Start Survey"}
-            btnLink="" // SENDS US TO QUESTIONS
+            btnLink="questions" // SENDS US TO QUESTIONS
           />
 
           <ButtonCom
