@@ -1,4 +1,4 @@
-// import Nav here.
+import NavBar from "../components/NavBar";
 import Link from "next/link";
 import Head from "next/head";
 
@@ -12,8 +12,10 @@ export default function About() {
           content="initial-scale=1.0, width=device-width"
           description="descrite the page for Google and other search engins"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="public/favicon.ico" />
       </Head>
+
+      <NavBar />
 
       <main>
         <h1> About Page</h1>
