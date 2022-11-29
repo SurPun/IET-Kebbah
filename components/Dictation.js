@@ -1,29 +1,37 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "regenerator-runtime";
 
 import SpeechRecognition, {
-    useSpeechRecognition,
+  useSpeechRecognition,
 } from "react-speech-recognition";
 
-export default function Dictaphone() {
-    const {
-        transcript,
-        listening,
-        resetTranscript,
-        browserSupportsSpeechRecognition,
-    } = useSpeechRecognition();
+export default function Dictaphone({ setTranscript }) {
+  const {
+    transcript,
+    listening,
+    resetTranscript,
+    browserSupportsSpeechRecognition,
+    isMicrophoneAvailable,
+  } = useSpeechRecognition();
 
-    if (!browserSupportsSpeechRecognition) {
-        return <span>Browser does not support speech recognition.</span>;
-    }
+  useEffect(() => {
+    setTranscript(transcript);
+  }, [transcript]);
 
-    return (
-        <div>
-            <p>Microphone: {listening ? "on" : "off"}</p>
-            <button onClick={SpeechRecognition.startListening}>Start</button>
-            <button onClick={SpeechRecognition.stopListening}>Stop</button>
-            <button onClick={resetTranscript}>Reset</button>
-            <p>{transcript}</p>
-        </div>
-    );
+  if (!isMicrophoneAvailable) {
+    return <p>Please type your answer!</p>;
+  }
+
+  if (!browserSupportsSpeechRecognition) {
+    return <p>Browser does not support speech recognition.</p>;
+  }
+
+  return (
+    <>
+      <p>Microphone: {listening ? "on" : "off"}</p>
+      <button onClick={SpeechRecognition.startListening}>START</button>
+      <button onClick={SpeechRecognition.stopListening}>STOP</button>
+      <button onClick={resetTranscript}>RESET</button>
+    </>
+  );
 }
