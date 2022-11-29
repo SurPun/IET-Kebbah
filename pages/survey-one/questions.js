@@ -11,6 +11,7 @@
 // [ ] * Dictation option
 
 import { useState } from "react";
+import ButtonCom from "../../components/ButtonCom";
 import CountdownTimer from "../../components/CountdownTimer";
 
 
@@ -20,7 +21,6 @@ export default function Questions() {
     <>
       {questionOptions(questionNumber, setQuestionNumber)}
     </>
-
   );
 }
 
@@ -32,7 +32,9 @@ function questionOptions(number, func) {
         <>
           <p>What is the first thing you will say to him?</p>
           < CountdownTimer key={number} sec={30} />
-          <button onClick={() => func(2)}>Next Question</button>
+          <input type='text' placeholder="type here.."></input>
+          <ButtonCom btnName={"Next question"} BtnOnClick={() => func(2)} />
+
           <p>1 out of 3</p>
         </>
       )
@@ -41,7 +43,9 @@ function questionOptions(number, func) {
         <>
           <p>What assumptions will you make of him?</p>
           < CountdownTimer key={number} sec={30} />
-          <button onClick={() => func(3)}>Next Question</button>
+          <input type='text' placeholder="type here.."></input>
+          <ButtonCom btnName={"Next question"} BtnOnClick={() => func(3)} />
+
           <p> 2 out of 3</p>
 
         </>
@@ -51,7 +55,9 @@ function questionOptions(number, func) {
         <>
           <p>Will your main objective be to stop and search or stop and account and why?</p>
           < CountdownTimer key={number} sec={30} />
-          <button onClick={() => func(0)}>Submit Survey</button>
+          <input type='text' placeholder="type here.."></input>
+          <ButtonCom btnName={"Finish Survey"} btnLink="/training/intro" BtnOnClick={() => func(0)} />
+
           <p>3 out of 3</p>
 
         </>
