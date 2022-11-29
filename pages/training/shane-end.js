@@ -1,10 +1,11 @@
-import ButtonCom from "../../../components/ButtonCom";
+import ButtonCom from "../../components/ButtonCom";
 
-export default function ComfortSis() {
+export default function ShaneEnd() {
   return (
     <>
+      {/* Google Drive Src */}
       <iframe
-        src="https://geo.dailymotion.com/player/xaygu.html?video=x8fx213"
+        src="https://geo.dailymotion.com/player/xaygu.html?video=x8fx6b9"
         allow="autoplay; fullscreen; picture-in-picture"
         allowfullscreen
         frameborder="0"
@@ -12,7 +13,7 @@ export default function ComfortSis() {
         height="360"
         className="pointer-events-none"
       ></iframe>
-      <ButtonCom btnName={"Next"} btnLink="../shane-school" />
+      <ButtonCom btnName={"End"} btnLink="/" />
     </>
   );
 }
