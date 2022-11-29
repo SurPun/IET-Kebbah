@@ -13,6 +13,7 @@
 import { useState } from "react";
 import ButtonCom from "../../components/ButtonCom";
 import CountdownTimer from "../../components/CountdownTimer";
+import Dictaphone from "../../components/Dictation";
 
 
 export default function Questions() {
@@ -30,6 +31,7 @@ function questionOptions(number, func) {
     case (1):
       return (
         <>
+          <Dictaphone />
           <p>What is the first thing you will say to him?</p>
           < CountdownTimer key={number} sec={30} />
           <input type='text' placeholder="type here.."></input>
@@ -57,7 +59,6 @@ function questionOptions(number, func) {
           < CountdownTimer key={number} sec={30} />
           <input type='text' placeholder="type here.."></input>
           <ButtonCom btnName={"Finish Survey"} btnLink="/training/intro" BtnOnClick={() => func(0)} />
-
           <p>3 out of 3</p>
 
         </>
