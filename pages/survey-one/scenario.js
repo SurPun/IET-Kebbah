@@ -27,14 +27,14 @@ export default function Scenario() {
       ) : (
         <div>
           <iframe
-            src="https://www.dailymotion.com/embed/video/x8fx226?autoplay=1&controls=0&queue-autoplay-next=0&queue-enable=0&sharing-enable=0&ui-logo=0&ui-start-screen-info=0"
+            src="https://geo.dailymotion.com/player/xaygu.html?video=x8fx226"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
             frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
-            width="480"
-            height="270"
+            width="640"
+            height="360"
             className="pointer-events-none"
           ></iframe>
-
           <ButtonCom
             btnName={"Start Survey"}
             btnLink="questions" // SENDS US TO QUESTIONS
@@ -46,12 +46,6 @@ export default function Scenario() {
               setTranscript(true);
             }}
           />
-          {/* Modal */}
-          <p>
-            <b className="text-red-700">Warning!</b>
-            You will be given 5 seconds to read a question and then can type your
-            answer or speak into the microphone
-          </p>
         </div>
       )}
     </>
