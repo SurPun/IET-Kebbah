@@ -16,11 +16,14 @@ export default function ShaneLife() {
       {/* Google Drive Src */}
 
       <iframe
-        src="https://drive.google.com/file/d/1fCLb07xJsr13tN0H1_plL8LO2hI_FXQv/preview?control=0"
-        width="640"
-        height="480"
-        allow="autoplay"
+        src="https://www.dailymotion.com/embed/video/x8fx1nc?autoplay=1&controls=0&queue-autoplay-next=0&queue-enable=0&sharing-enable=0&ui-logo=0&ui-start-screen-info=0"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+        width="480"
+        height="270"
+        className="pointer-events-none"
       ></iframe>
+
       {/* Youtube Src */}
       {/* <iframe
         width="560"
