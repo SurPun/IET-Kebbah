@@ -43,10 +43,12 @@ export default function Home() {
           ) : (
             <>
               <iframe
-                width="420"
-                height="315"
-                controls={false}
-                src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                src="https://www.dailymotion.com/embed/video/x8fx1n1?autoplay=1&controls=0&queue-autoplay-next=0&queue-enable=0&sharing-enable=0&ui-logo=0&ui-start-screen-info=0"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+                width="480"
+                height="270"
+                className="pointer-events-none"
               ></iframe>
               <ButtonCom
                 btnName={"Read transcript instead"}
