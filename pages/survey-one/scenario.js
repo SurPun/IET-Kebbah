@@ -47,6 +47,12 @@ export default function Scenario() {
               setTranscript(true);
             }}
           />
+          {/* Modal */}
+          <p>
+            <b className="text-red-700">Warning!</b>
+            You will be given 5 seconds to read a question and then can type your
+            answer or speak into the microphone
+          </p>
         </div>
       )}
     </>
