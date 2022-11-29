@@ -9,20 +9,40 @@ export default function ShaneFamily() {
       <audio hidden autoPlay controls src="/audio/shaneTalking.mp3" />
       <h2>Hello, I am Shane</h2>
       <div className="flex list-none justify-center">
-        <Image src="/portraits/shane.jpg" alt="" height={200} width={200} />
+        <Image
+          src="/portraits/shane.jpg"
+          alt="image of Shane"
+          height={200}
+          width={200}
+        />
       </div>
       <p>This is my family</p>
       <ul className="flex list-none text-center justify-around">
         <li>
-          <Image src="/portraits/dad.jpg" alt="" height={300} width={300} />
+          <Image
+            src="/portraits/dad.jpg"
+            alt="image of Shane's dad"
+            height={300}
+            width={300}
+          />
           <p>Dad</p>
         </li>
         <li>
-          <Image src="/portraits/mum.jpg" alt="" height={300} width={300} />
+          <Image
+            src="/portraits/mum.jpg"
+            alt="image of Shane's mom"
+            height={300}
+            width={300}
+          />
           <p>Mum</p>
         </li>
         <li>
-          <Image src="/portraits/shanice.jpg" alt="" height={300} width={300} />
+          <Image
+            src="/portraits/shanice.jpg"
+            alt="image of Shane's sister"
+            height={300}
+            width={300}
+          />
           <p>Shanice</p>
         </li>
       </ul>
