@@ -1,16 +1,20 @@
 // [X] Add questions to state and dynamically go to next question
-// [ ] Set seconds to state 
-// [ ] Restart timer as next question is displays 
-// [ ] Edit Countdown timer to be able to pass props to be set as given seconds
+// [X] Set seconds to state 
+// [X] Restart timer as next question is displays 
+// [X] Edit Countdown timer to be able to pass props to be set as given seconds
+// [ ] QuestionOptions - refactor switch statement to an array
+// [ ] Popup warning "You will be given 5 seconds to read a question and then can type youranswer or speak into the microphone
 // [ ] Figure out where to store the data before it is sent to DB/airtable
 // Stretch
-// [ ] * Add 5 seconds timer before we start
-// [ ] * Dictation option
+// [-] * Add 5 seconds timer before we start - Decided to to go with this idea. 
 // [ ] * Add progress bar to each Q'
+// [ ] * Dictation option
 
 import { useState } from "react";
+import ButtonCom from "../../components/ButtonCom";
 import CountdownTimer from "../../components/CountdownTimer";
-import CountdownTimer1 from "../../components/CountdownTimer1";
+import Dictaphone from "../../components/Dictation";
+
 
 export default function Questions() {
   const [questionNumber, setQuestionNumber] = useState(1)
@@ -18,42 +22,44 @@ export default function Questions() {
     <>
       {questionOptions(questionNumber, setQuestionNumber)}
     </>
-
   );
 }
 
 
 function questionOptions(number, func) {
-  console.log("Component is rendered")
-  // useEffect change state of the component
   switch (number) {
     case (1):
       return (
         <>
+          <Dictaphone />
           <p>What is the first thing you will say to him?</p>
-          < CountdownTimer sec={30} isNew />
-          {/* < CountdownTimer1 sec={30} /> */}
-          <p>This is Q1</p>
-          <button onClick={() => func(2)}>Next question</button>
+          < CountdownTimer key={number} sec={30} />
+          <input type='text' placeholder="type here.."></input>
+          <ButtonCom btnName={"Next question"} BtnOnClick={() => func(2)} />
+
+          <p>1 out of 3</p>
         </>
       )
     case (2):
       return (
         <>
-          <p>Question number 2</p>
-          < CountdownTimer sec={20} isNew />
-          {/* < CountdownTimer1 sec={30} /> */}
-          <button onClick={() => func(3)}>Next question</button>
+          <p>What assumptions will you make of him?</p>
+          < CountdownTimer key={number} sec={30} />
+          <input type='text' placeholder="type here.."></input>
+          <ButtonCom btnName={"Next question"} BtnOnClick={() => func(3)} />
+
+          <p> 2 out of 3</p>
 
         </>
       )
     case (3):
       return (
         <>
-          <p>Question number 3</p>
-          < CountdownTimer sec={10} isNew />
-          {/* < CountdownTimer1 sec={30} /> */}
-          <button onClick={() => func(0)}>Submit survey</button>
+          <p>Will your main objective be to stop and search or stop and account and why?</p>
+          < CountdownTimer key={number} sec={30} />
+          <input type='text' placeholder="type here.."></input>
+          <ButtonCom btnName={"Finish Survey"} btnLink="/training/intro" BtnOnClick={() => func(0)} />
+          <p>3 out of 3</p>
 
         </>
       )
