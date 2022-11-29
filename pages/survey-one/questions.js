@@ -10,7 +10,6 @@
 
 import { useState } from "react";
 import CountdownTimer from "../../components/CountdownTimer";
-import CountdownTimer1 from "../../components/CountdownTimer1";
 
 export default function Questions() {
   const [questionNumber, setQuestionNumber] = useState(1)
@@ -24,16 +23,12 @@ export default function Questions() {
 
 
 function questionOptions(number, func) {
-  console.log("Component is rendered")
-  // useEffect change state of the component
   switch (number) {
     case (1):
       return (
         <>
           <p>What is the first thing you will say to him?</p>
-          < CountdownTimer sec={30} isNew />
-          {/* < CountdownTimer1 sec={30} /> */}
-          <p>This is Q1</p>
+          < CountdownTimer key={number} sec={30} />
           <button onClick={() => func(2)}>Next question</button>
         </>
       )
@@ -41,8 +36,7 @@ function questionOptions(number, func) {
       return (
         <>
           <p>Question number 2</p>
-          < CountdownTimer sec={20} isNew />
-          {/* < CountdownTimer1 sec={30} /> */}
+          < CountdownTimer key={number} sec={30} />
           <button onClick={() => func(3)}>Next question</button>
 
         </>
@@ -51,8 +45,7 @@ function questionOptions(number, func) {
       return (
         <>
           <p>Question number 3</p>
-          < CountdownTimer sec={10} isNew />
-          {/* < CountdownTimer1 sec={30} /> */}
+          < CountdownTimer key={number} sec={30} />
           <button onClick={() => func(0)}>Submit survey</button>
 
         </>
