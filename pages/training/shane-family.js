@@ -1,26 +1,12 @@
 import React from "react";
 import Image from "next/image";
 import ButtonCom from "../../components/ButtonCom";
-// import ReactDOM from "react-dom";
-
-// AUDIO TEST - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-// import ReactAudioPlayer from "react-audio-player";
-// import shaneTalking from "./shaneTalking.wav";
-{
-  /* <audio id="a1" src="./shaneTalking.wav"></audio> */
-}
-
-// let talk = new Audio("./shaneTalking.wav");
-// talk.play();
-
-// const shaneTalking = new Audio(shaneTalks);
-// shaneTalking.play();
-// AUDIO TEST - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 export default function ShaneFamily() {
   return (
     <div className="text-center">
-      {/* <ReactAudioPlayer src="../public/audio/shaneTalking.wav" autoPlay /> */}
+      {/* you don't need to put public in the directory*/}
+      <audio hidden autoPlay controls src="/audio/shaneTalking.mp3" />
       <h2>Hello, I am Shane</h2>
       <div className="flex list-none justify-center">
         <Image src="/portraits/shane.jpg" alt="" height={200} width={200} />
@@ -46,6 +32,7 @@ export default function ShaneFamily() {
   );
 }
 
-// - [ ] Play audio
+// - [ ] Hide Audio & AutoPlay on load
+// - [x] Play audio
 // - [X] Show Shane's family pics
 // - [X] Btn to become Shane takes you to new route
