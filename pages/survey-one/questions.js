@@ -11,7 +11,6 @@
 // [ ] * Add progress bar to each Q'
 // [ ] * Dictation option
 
-
 import { useEffect, useState } from "react";
 import ButtonCom from "../../components/ButtonCom";
 import CountdownTimer from "../../components/CountdownTimer";
@@ -19,46 +18,58 @@ import CountdownTimer from "../../components/CountdownTimer";
 import createUserResponse from "../../utils/createUserResponse";
 
 export default function Questions() {
-
-  const [questionNumber, setQuestionNumber] = useState(1)
-  const [answer, setAnswer] = useState({})
-  const [completed, setCompleted] = useState(false)
-  const [surveyData, setSurveyData] = useState({})
-
+  const [questionNumber, setQuestionNumber] = useState(1);
+  const [answer, setAnswer] = useState({});
+  const [completed, setCompleted] = useState(false);
+  const [surveyData, setSurveyData] = useState({});
 
   useEffect(() => {
-    localStorage.setItem('surveyAnswers', JSON.stringify(answer));
-    console.log(localStorage.getItem("surveyAnswers"))
+    localStorage.setItem("surveyAnswers", JSON.stringify(answer));
+    console.log(localStorage.getItem("surveyAnswers"));
   }, [answer]);
 
   useEffect(() => {
     const userDataToSubmit = JSON.parse(localStorage.getItem("surveyAnswers"));
-    setSurveyData({ "fields": { ...userDataToSubmit } })
+    setSurveyData({ fields: { ...userDataToSubmit } });
   }, [completed]);
-
 
   return (
     <>
-      {questionOptions(questionNumber, setQuestionNumber, setAnswer, answer, setCompleted, surveyData)}
+      {questionOptions(
+        questionNumber,
+        setQuestionNumber,
+        setAnswer,
+        answer,
+        setCompleted,
+        surveyData
+      )}
     </>
   );
 }
 
-
-function questionOptions(number, setQuestionNumber, setAnswer, answer, setCompleted, surveyData) {
+function questionOptions(
+  number,
+  setQuestionNumber,
+  setAnswer,
+  answer,
+  setCompleted,
+  surveyData
+) {
   switch (number) {
     case 1:
       return (
         <>
           {/* <Dictaphone setTranscript={setTranscript} /> */}
           <p>What is the first thing you will say to him?</p>
-
-          < CountdownTimer key={number} sec={30} />
-          <input type='text' placeholder="type here.."></input>
-          <ButtonCom btnName={"Next question"} BtnOnClick={(e) => {
-            setQuestionNumber(2)
-            setAnswer({ ...answer, "s1q1": "TEST!" })
-          }} />
+          <CountdownTimer key={number} sec={30} />
+          <input type="text" placeholder="type here.."></input>
+          <ButtonCom
+            btnName={"Next question"}
+            BtnOnClick={(e) => {
+              setQuestionNumber(2);
+              setAnswer({ ...answer, s1q1: "TEST!" });
+            }}
+          />
           <p>1 out of 3</p>""
         </>
       );
@@ -67,39 +78,50 @@ function questionOptions(number, setQuestionNumber, setAnswer, answer, setComple
         <>
           <p>What assumptions will you make of him?</p>
 
-          < CountdownTimer key={number} sec={30} />
-          <input type='text' placeholder="type here.."></input>
-          <ButtonCom btnName={"Next question"} BtnOnClick={() => {
-            setQuestionNumber(3)
-            setAnswer({ ...answer, "s1q2": "THIS" })
-          }} />
+          <CountdownTimer key={number} sec={30} />
+          <input type="text" placeholder="type here.."></input>
+          <ButtonCom
+            btnName={"Next question"}
+            BtnOnClick={() => {
+              setQuestionNumber(3);
+              setAnswer({ ...answer, s1q2: "THIS" });
+            }}
+          />
           <p> 2 out of 3</p>
         </>
       );
     case 3:
       return (
         <>
-
-          <p>Will your main objective be to stop and search or stop and account and why?</p>
-          < CountdownTimer key={number} sec={30} />
-          <input type='text' placeholder="type here.."></input>
-          <ButtonCom btnName={"Finish Survey"} BtnOnClick={() => {
-            setQuestionNumber(0)
-            setAnswer({ ...answer, "s1q3": "WORKED" })
-            setCompleted(true)
-          }} />
+          <p>
+            Will your main objective be to stop and search or stop and account
+            and why?
+          </p>
+          <CountdownTimer key={number} sec={30} />
+          <input type="text" placeholder="type here.."></input>
+          <ButtonCom
+            btnName={"Finish Survey"}
+            BtnOnClick={() => {
+              setQuestionNumber(0);
+              setAnswer({ ...answer, s1q3: "WORKED" });
+              setCompleted(true);
+            }}
+          />
           <p>3 out of 3</p>
         </>
-
-      )
-    case (0):
+      );
+    case 0:
       return (
         <>
           <p>You've completed this survey</p>
-          <button onClick={() => {
-            createUserResponse(surveyData)
-          }}>FINISH</button>
+          <ButtonCom
+            BtnOnClick={() => {
+              createUserResponse(surveyData);
+            }}
+            btnName={"Finish Survey"}
+            btnLink="/training/intro"
+          />
         </>
-      )
+      );
   }
 }
