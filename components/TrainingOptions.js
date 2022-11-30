@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 import ButtonCom from "./ButtonCom";
 import { useState } from "react";
-import { ReactDOM } from "react";
 
 export default function TrainingOptions() {
   const [showModal, setShowModal] = useState(false);

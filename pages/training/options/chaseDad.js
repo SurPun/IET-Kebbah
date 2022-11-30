@@ -1,3 +1,5 @@
+import ButtonCom from "../../../components/ButtonCom";
+
 export default function ChaseDad() {
   return (
     <>
@@ -10,6 +12,8 @@ export default function ChaseDad() {
         height="360"
         className="pointer-events-none"
       ></iframe>
+
+      <ButtonCom btnName={"Next"} btnLink="../shane-school" />
     </>
   );
 }

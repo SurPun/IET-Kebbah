@@ -1,3 +1,5 @@
+import ButtonCom from "../../../components/ButtonCom";
+
 export default function ComfortMom() {
   return (
     <>
@@ -10,6 +12,7 @@ export default function ComfortMom() {
         height="360"
         className="pointer-events-none"
       ></iframe>
+      <ButtonCom btnName={"Next"} btnLink="../shane-school" />
     </>
   );
 }
