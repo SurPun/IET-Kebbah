@@ -22,6 +22,9 @@ export default function TrainingOptions() {
         <>
           {/* Options */}
           <TrainingCountdownTimer sec={30} />
+          <audio controls src="/audio/whitenoise.mp3" />
+          {/* Look into React Icons to add a speaker icon! */}
+
           <div>
             <h2>You are facing the following three choices</h2>
             <div>
