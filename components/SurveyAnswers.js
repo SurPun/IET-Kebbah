@@ -1,25 +1,8 @@
 import React from 'react'
 // Airtable 
 
-function SurveyAnswers() {
-    const usersSurveyAnswers = {
-        s1: {
-            q1: "bla1?",
-            a1: "bla",
-            q2: "bla2?",
-            a2: "blabla",
-            q3: "bla3?",
-            a3: "blablabla",
-        },
-        s2: {
-            q1: "bla1?",
-            a1: "bla",
-            q2: "bla2?",
-            a2: "blabla",
-            q3: "bla3?",
-            a3: "blablabla",
-        }
-    }
+
+function SurveyAnswers({ usersSurveyAnswers }) {
 
     return (
         <div>
