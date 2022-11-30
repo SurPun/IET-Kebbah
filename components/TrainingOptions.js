@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import ButtonCom from "./ButtonCom";
 import { useState } from "react";
+import TrainingCountdownTimer from "./TrainingCountdownTimer";
 
 export default function TrainingOptions() {
   const [showModal, setShowModal] = useState(false);
@@ -20,6 +21,7 @@ export default function TrainingOptions() {
       {showModal ? (
         <>
           {/* Options */}
+          <TrainingCountdownTimer sec={30} />
           <div>
             <h2>You are facing the following three choices</h2>
             <div>
