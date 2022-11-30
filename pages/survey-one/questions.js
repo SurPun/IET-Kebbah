@@ -15,7 +15,7 @@
 import { useEffect, useState } from "react";
 import ButtonCom from "../../components/ButtonCom";
 import CountdownTimer from "../../components/CountdownTimer";
-import Dictaphone from "../../components/Dictation";
+// import Dictaphone from "../../components/Dictation";
 import createUserResponse from "../../utils/createUserResponse";
 
 export default function Questions() {
@@ -50,7 +50,7 @@ function questionOptions(number, setQuestionNumber, setAnswer, answer, setComple
     case 1:
       return (
         <>
-          <Dictaphone setTranscript={setTranscript} />
+          {/* <Dictaphone setTranscript={setTranscript} /> */}
           <p>What is the first thing you will say to him?</p>
 
           < CountdownTimer key={number} sec={30} />
