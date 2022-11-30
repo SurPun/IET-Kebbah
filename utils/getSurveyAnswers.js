@@ -1,4 +1,4 @@
-import { table, minifyRecord, getMinifiedRecords } from "./utils/Airtable"
+import { table, minifyRecord, getMinifiedRecords } from "./Airtable"
 export default async (req, res) => {
     try {
         const records = await table.select({

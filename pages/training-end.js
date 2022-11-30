@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import SurveyAnswers from '../components/SurveyAnswers'
 
 // Mock data
@@ -22,6 +22,10 @@ const usersSurveyAnswers = {
 }
 
 export default function TrainingEnd() {
+    useEffect(() => {
+        const answers = localStorage.getItem('surveyAnswers');
+        console.log(answers)
+    }, []);
     return (
         <>
             <SurveyAnswers usersSurveyAnswers={usersSurveyAnswers} />

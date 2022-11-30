@@ -1,4 +1,4 @@
-import { table } from "./utils/Airtable"
+import { table } from "./Airtable"
 // - [ ] Every survey answer updates specific page
 // - [ ] Get survey answers from state and update specific column in the airtable
 // - [ ] OR: Attach all answers in useContext -> and send to table at the end of the training
@@ -32,22 +32,3 @@ export default async (req, res) => {
         return res.json({ msg: "Something went wrong!" })
     }
 }
-
-
-// export default function async(req, res) {
-//     try {
-//         const records = await table.select({}).firstPage();
-//         const minifieldRecords = minifyRecords(records);
-//     }
-// }
-
-
-// "fields": {
-//     "name": "newNamesofFields",
-//     "s1q1": "daskjjhjk",
-//     "s1q2": "jk",
-//     "s1q3": "jk",
-//     "s2q1": "jhk",
-//     "s2q2": "kjhkh",
-//     "s2q3": "kjhkjhkjh"
-// }
