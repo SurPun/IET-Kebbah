@@ -104,6 +104,3 @@ function questionOptions(number, setQuestionNumber, setAnswer, answer, setComple
   }
 
 }
-
-
-
