@@ -2,10 +2,8 @@
 // [X] Rename questions
 // [x] Add to local storage correctly, update keys to add as
 // [ ] Mark as completed - maybe unneccessary
-// [ ] 
 // [x] Link to end of training 
-// [ ] Display answers so far for user to see - localstorage "surveyAnswers" and "surveyTwoAnswers"
-// [ ] On btnClick = End training/Resources - send to airtable
+// [x] On btnClick = End training/Resources - send to airtable
 
 import { useEffect, useState } from "react";
 import ButtonCom from "../../components/ButtonCom";
@@ -124,7 +122,7 @@ function questionOptions(
               BtnOnClick={() => {
                 createUserResponse(surveyData);
               }}
-              btnName={"To training"}
+              btnName={"Finish training"}
             />
           </Link>
         </>

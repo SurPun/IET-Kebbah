@@ -23,13 +23,13 @@ import ButtonCom from "../../components/ButtonCom";
 import CountdownTimer from "../../components/CountdownTimer";
 import { useForm } from "react-hook-form"
 // import Dictaphone from "../../components/Dictation";
-import createUserResponse from "../../utils/createUserResponse";
+// import createUserResponse from "../../utils/createUserResponse";
 
 export default function Questions() {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [answer, setAnswer] = useState({});
-  const [completed, setCompleted] = useState(false);
-  const [surveyData, setSurveyData] = useState({});
+  // const [completed, setCompleted] = useState(false);
+  // const [surveyData, setSurveyData] = useState({});
   const { register, handleSubmit } = useForm()
 
   useEffect(() => {
@@ -38,10 +38,10 @@ export default function Questions() {
     console.log(localStorage.getItem("surveyAnswers"));
   }, [answer]);
 
-  useEffect(() => {
-    const userDataToSubmit = JSON.parse(localStorage.getItem("surveyAnswers"));
-    setSurveyData({ fields: { ...userDataToSubmit } });
-  }, [completed]);
+  // useEffect(() => {
+  //   const userDataToSubmit = JSON.parse(localStorage.getItem("surveyAnswers"));
+  //   setSurveyData({ fields: { ...userDataToSubmit } });
+  // }, [completed]);
 
   return (
     <>
@@ -50,8 +50,8 @@ export default function Questions() {
         setQuestionNumber,
         setAnswer,
         answer,
-        setCompleted,
-        surveyData,
+        // setCompleted,
+        // surveyData,
         register,
         handleSubmit
       )}
@@ -64,8 +64,8 @@ function questionOptions(
   setQuestionNumber,
   setAnswer,
   answer,
-  setCompleted,
-  surveyData,
+  // setCompleted,
+  // surveyData,
   register,
   handleSubmit
 ) {
@@ -135,9 +135,9 @@ function questionOptions(
         <>
           <h2>You've completed this survey</h2>
           <ButtonCom
-            BtnOnClick={() => {
-              createUserResponse(surveyData);
-            }}
+            // BtnOnClick={() => {
+            //   createUserResponse(surveyData);
+            // }}
             btnName={"To training"}
             btnLink="/training/intro"
           />
