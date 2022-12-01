@@ -1,34 +1,24 @@
-import React, { useEffect } from 'react'
+// [x] Display answers so far for user to see - localstorage "surveyAnswers" and "surveyTwoAnswers"
+
+import React, { useEffect, useState } from 'react'
+import ButtonCom from '../components/ButtonCom';
 import SurveyAnswers from '../components/SurveyAnswers'
 
-// Mock data
-const usersSurveyAnswers = {
-    s1: {
-        q1: "bla1?",
-        a1: "bla",
-        q2: "bla2?",
-        a2: "blabla",
-        q3: "bla3?",
-        a3: "blablabla",
-    },
-    s2: {
-        q1: "bla1?",
-        a1: "bla",
-        q2: "bla2?",
-        a2: "blabla",
-        q3: "bla3?",
-        a3: "blablabla",
-    }
-}
 
 export default function TrainingEnd() {
+    const [userSurveyAnswers, setUserSurveyAnswers] = useState({})
+
     useEffect(() => {
-        const answers = localStorage.getItem('surveyAnswers');
-        console.log(answers)
+        const answersOne = JSON.parse(localStorage.getItem('surveyAnswers'));
+        const answersTwo = JSON.parse(localStorage.getItem('surveyTwoAnswers'))
+        setUserSurveyAnswers([answersOne, answersTwo])
     }, []);
+
+
     return (
         <>
-            <SurveyAnswers usersSurveyAnswers={usersSurveyAnswers} />
+            <SurveyAnswers userSurveyAnswers={userSurveyAnswers} />
+            <ButtonCom btnName={"Go to resources"} btnLink={"/resources"} />
         </>
     )
 }
