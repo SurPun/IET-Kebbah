@@ -13,7 +13,7 @@ export default function ShaneEnd() {
         height="360"
         className="pointer-events-none"
       ></iframe>
-      <ButtonCom btnName={"End"} btnLink="/survey-two/introductionTwo" />
+      <ButtonCom btnName={"End"} btnLink="/survey-two/introduction" />
     </>
   );
 }

@@ -1,22 +1,11 @@
-// [X] Add questions to state and dynamically go to next question
-// [X] Set seconds to state
-// [X] Restart timer as next question is displays
-// [X] Edit Countdown timer to be able to pass props to be set as given seconds
-// [-] Popup warning "You will be given 5 seconds to read a question and then can type youranswer or speak into the microphone
-// [X] Figure out where to store the data before it is sent to DB/airtable
-// [X] Get input value for each question answer and send to localstorage
-// [X] Take user input and store in useState - answer
-// [ ] Survey 2 
-// [ ] Refactor: const [surveyData, setSurveyData] = useState({});
-
-
-// Stretch
-// [X] * Add progress bar to each Q'
-// [-] * Add 5 seconds timer before we start - Decided to to go with this idea.
-// [ ] * Dictation option - when this is used - send to correct input (is going to be changed since last used)
-// [ ] QuestionOptions - refactor switch statement to an array
-// [ ] Show next button once user has started typing (useState?)
-// [ ] Once survey 1 is completed, do not allow user to complete again - useContext!?!?
+// Survey 2 
+// [X] Rename questions
+// [ ] Add to local storage correctly, update keys to add as
+// [ ] Mark as completed - maybe unneccessary
+// [ ] 
+// [ ] Link to end of training 
+// [ ] Display answers so far for user to see
+// [ ] On btnClick = End training/Resources - send to airtable
 
 import { useEffect, useState } from "react";
 import ButtonCom from "../../components/ButtonCom";
@@ -24,6 +13,7 @@ import CountdownTimer from "../../components/CountdownTimer";
 import { useForm } from "react-hook-form"
 // import Dictaphone from "../../components/Dictation";
 import createUserResponse from "../../utils/createUserResponse";
+import Link from "next/link";
 
 export default function Questions() {
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -32,15 +22,25 @@ export default function Questions() {
   const [surveyData, setSurveyData] = useState({});
   const { register, handleSubmit } = useForm()
 
+  // useEffect(() => {
+  //   // as soon as page loads => get localStorage -> setAnswer with what's currently there
+  //   const previousAnswers = JSON.parse(localStorage.getItem("surveyAnswers"))
+  //   setSurveyData(previousAnswers)
+  //   // localStorage.setItem("surveyAnswers", JSON.stringify({s1q1: "Persisting localstorage"}))
+  // }, [])
+
   useEffect(() => {
     console.log(answer)
-    localStorage.setItem("surveyAnswers", JSON.stringify(answer));
-    console.log(localStorage.getItem("surveyAnswers"));
+    localStorage.setItem("surveyTwoAnswers", JSON.stringify(answer));
+    console.log(localStorage.getItem("surveyTwoAnswers"));
   }, [answer]);
 
   useEffect(() => {
-    const userDataToSubmit = JSON.parse(localStorage.getItem("surveyAnswers"));
-    setSurveyData({ fields: { ...userDataToSubmit } });
+    const previousAnswers = JSON.parse(localStorage.getItem("surveyAnswers"))
+    const currentAnswers = JSON.parse(localStorage.getItem("surveyTwoAnswers"));
+    let surveyDataToSubmit = { fields: { ...previousAnswers, ...currentAnswers } }
+    console.log(surveyDataToSubmit)
+    setSurveyData(surveyDataToSubmit);
   }, [completed]);
 
   return (
@@ -80,7 +80,7 @@ function questionOptions(
             <input key="q1" {...register("answer1")} type="text" placeholder="type here.."></input>
             <ButtonCom btnName={"Next question"} BtnOnClick={handleSubmit((data) => {
               setQuestionNumber(2);
-              setAnswer({ ...answer, s1q1: data.answer1 });
+              setAnswer({ ...answer, s2q1: data.answer1 });
             })} />
           </form>
           <p>1 out of 3</p>
@@ -96,7 +96,7 @@ function questionOptions(
             <input key="q2" {...register("answer2")} type="text" placeholder="type here.."></input>
             <ButtonCom btnName={"Next question"} BtnOnClick={handleSubmit((data) => {
               setQuestionNumber(3);
-              setAnswer({ ...answer, s1q2: data.answer2 });
+              setAnswer({ ...answer, s2q2: data.answer2 });
             })} />
           </form>
           <p> 2 out of 3</p>
@@ -114,7 +114,8 @@ function questionOptions(
             <input key="q3" {...register("answer3")} type="text" placeholder="type here.."></input>
             <ButtonCom btnName={"Finish survey"} BtnOnClick={handleSubmit((data) => {
               setQuestionNumber(0);
-              setAnswer({ ...answer, s1q3: data.answer3 });
+              setCompleted(true);
+              setAnswer({ ...answer, s2q3: data.answer3 });
             })} />
           </form>
           {/*           
@@ -134,13 +135,15 @@ function questionOptions(
       return (
         <>
           <h2>You've completed this survey</h2>
-          <ButtonCom
-            BtnOnClick={() => {
-              createUserResponse(surveyData);
-            }}
-            btnName={"To training"}
-            btnLink="/training/intro"
-          />
+          <Link href="/training/intro">
+            <ButtonCom
+              btnLink={"/training/intro"}
+              BtnOnClick={() => {
+                createUserResponse(surveyData);
+              }}
+              btnName={"To training"}
+            />
+          </Link>
         </>
       );
   }
