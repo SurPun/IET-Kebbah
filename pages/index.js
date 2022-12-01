@@ -2,7 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import NavBar from "../components/NavBar";
 import ButtonCom from "../components/ButtonCom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import IntroToTraining from "../public/textFiles/IntroToTraining";
 
 export default function Home() {
