@@ -1,10 +1,10 @@
 // Survey 2 
 // [X] Rename questions
-// [ ] Add to local storage correctly, update keys to add as
+// [x] Add to local storage correctly, update keys to add as
 // [ ] Mark as completed - maybe unneccessary
 // [ ] 
-// [ ] Link to end of training 
-// [ ] Display answers so far for user to see
+// [x] Link to end of training 
+// [ ] Display answers so far for user to see - localstorage "surveyAnswers" and "surveyTwoAnswers"
 // [ ] On btnClick = End training/Resources - send to airtable
 
 import { useEffect, useState } from "react";
@@ -21,13 +21,6 @@ export default function Questions() {
   const [completed, setCompleted] = useState(false);
   const [surveyData, setSurveyData] = useState({});
   const { register, handleSubmit } = useForm()
-
-  // useEffect(() => {
-  //   // as soon as page loads => get localStorage -> setAnswer with what's currently there
-  //   const previousAnswers = JSON.parse(localStorage.getItem("surveyAnswers"))
-  //   setSurveyData(previousAnswers)
-  //   // localStorage.setItem("surveyAnswers", JSON.stringify({s1q1: "Persisting localstorage"}))
-  // }, [])
 
   useEffect(() => {
     console.log(answer)
@@ -118,16 +111,6 @@ function questionOptions(
               setAnswer({ ...answer, s2q3: data.answer3 });
             })} />
           </form>
-          {/*           
-          <input type="text" placeholder="type here.."></input>
-          <ButtonCom
-            btnName={"Finish Survey"}
-            BtnOnClick={() => {
-              setQuestionNumber(0);
-              setAnswer({ ...answer, s1q3: "WORKED" });
-              setCompleted(true);
-            }}
-          /> */}
           <p>3 out of 3</p>
         </>
       );
@@ -135,9 +118,9 @@ function questionOptions(
       return (
         <>
           <h2>You've completed this survey</h2>
-          <Link href="/training/intro">
+          <Link href="/training-end">
             <ButtonCom
-              btnLink={"/training/intro"}
+              btnLink={"/training-end"}
               BtnOnClick={() => {
                 createUserResponse(surveyData);
               }}
