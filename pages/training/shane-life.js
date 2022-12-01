@@ -13,6 +13,7 @@ export default function ShaneLife() {
         height="360"
         className="pointer-events-none"
       ></iframe>
+      <audio autoPlay controls src="/audio/whitenoise.mp3" />
 
       {/* Options Component*/}
       <TrainingOptions />
