@@ -1,25 +1,31 @@
 import React from "react";
 import Image from "next/image";
 import ButtonCom from "./ButtonCom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import TrainingCountdownTimer from "./TrainingCountdownTimer";
+import Audio from "./Audio";
 
 export default function TrainingOptions() {
   const [showModal, setShowModal] = useState(false);
 
+  // This is a temp hack!
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowModal(true);
+    }, 59000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
-      <button
-        className="bg-blue-200 text-black active:bg-blue-500 
-        font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-        type="button"
-        onClick={() => setShowModal((current) => !current)}
-      >
-        Modal
-      </button>
-
       {showModal ? (
         <>
           {/* Options */}
+          <TrainingCountdownTimer sec={30} />
+          <Audio />
+
+          {/* Look into React Icons to add a speaker icon! */}
+
           <div>
             <h2>You are facing the following three choices</h2>
             <div>
@@ -67,4 +73,16 @@ export default function TrainingOptions() {
       ) : null}
     </>
   );
+}
+
+{
+  // Button To Show Model, Should be replaced with Speaker Icon so on click it pauses audio.
+  /* <button
+className="bg-blue-200 text-black active:bg-blue-500 
+font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
+type="button"
+onClick={() => setShowModal((current) => !current)}
+>
+Modal
+</button> */
 }

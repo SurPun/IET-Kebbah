@@ -1,14 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import ButtonCom from "../../components/ButtonCom";
-import Image from "next/image";
 import TrainingOptions from "../../components/TrainingOptions";
+// import { useState, useEffect } from "react";
+// import ReactPlayer from "react-player";
 
 // -------------------------------------
 // - [x] Render video
 // - [x] until options are displayed
 // - [x] Link options
-// - [ ] On options - display sound and display timer
+// - [x] On options - display sound and display timer
 
 export default function ShaneLife() {
   return (
@@ -28,4 +27,34 @@ export default function ShaneLife() {
       <TrainingOptions />
     </>
   );
+}
+
+// ---------------------------------------------------------------------------------------------------------
+
+// React Player Method
+// We have the react player method working, but the link to the dailymotion video does not work.
+// It works for YouTube! ARRRRR!
+
+// const [vid, setVid] = useState(false);
+// const [modal, setModal] = useState(false);
+
+// useEffect(() => {
+//   setVid(true);
+// }, [vid]);
+
+{
+  /*  
+      {vid ? (
+        <ReactPlayer 
+        onEnded={() => modal(true)}
+        url="https://www.youtube.com/watch?v=ysz5S6PUM-U" />
+      ) : null} */
+}
+
+// {modal && <TrainingOptions />}
+
+///////////////////////////////////////
+
+{
+  /* Google Drive Src */
 }

@@ -52,7 +52,7 @@ export default function ShaneFamily() {
   );
 }
 
-// - [ ] Hide Audio & AutoPlay on load
+// - [x] Hide Audio & AutoPlay on load
 // - [x] Play audio
 // - [X] Show Shane's family pics
 // - [X] Btn to become Shane takes you to new route
