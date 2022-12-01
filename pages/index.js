@@ -43,7 +43,7 @@ export default function Home() {
           ) : (
             <>
               <iframe
-                src="https://geo.dailymotion.com/player/xaygu.html?video=x8fx226"
+                src="https://geo.dailymotion.com/player/xaygu.html?video=x8fx1n1"
                 allow="autoplay; fullscreen; picture-in-picture"
                 allowfullscreen
                 frameborder="0"
