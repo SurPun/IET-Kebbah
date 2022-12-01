@@ -27,7 +27,7 @@ export default function TrainingOptions2() {
 
             {/* Decline */}
             <div>
-              <ButtonCom btnName={"Decline"} btnLink="/" />
+              <ButtonCom btnName={"Decline"} btnLink="./shane-life" />
             </div>
           </div>
         </>
