@@ -6,7 +6,7 @@ export default function ShaneFamily() {
   return (
     <div className="text-center">
       {/* you don't need to put public in the directory*/}
-      <audio hidden autoPlay controls src="/audio/shaneTalking.mp3" />
+      <audio  autoPlay controls src="/audio/shaneTalking.mp3" />
       <h2>Hello, I am Shane</h2>
       <div className="flex list-none justify-center">
         <Image

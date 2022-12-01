@@ -1,18 +1,9 @@
 import React from "react";
 import TrainingOptions from "../../components/TrainingOptions";
-// import { useState, useEffect } from "react";
-// import ReactPlayer from "react-player";
-
-// -------------------------------------
-// - [x] Render video
-// - [x] until options are displayed
-// - [x] Link options
-// - [x] On options - display sound and display timer
 
 export default function ShaneLife() {
   return (
     <>
-      {/* Google Drive Src */}
       <iframe
         src="https://geo.dailymotion.com/player/xaygu.html?video=x8fx1nc"
         allow="autoplay; fullscreen; picture-in-picture"
@@ -22,6 +13,7 @@ export default function ShaneLife() {
         height="360"
         className="pointer-events-none"
       ></iframe>
+      <audio autoPlay controls src="/audio/whitenoise.mp3" />
 
       {/* Options Component*/}
       <TrainingOptions />
@@ -31,9 +23,10 @@ export default function ShaneLife() {
 
 // ---------------------------------------------------------------------------------------------------------
 
-// React Player Method
-// We have the react player method working, but the link to the dailymotion video does not work.
-// It works for YouTube! ARRRRR!
+// React Player Method (back up)
+
+// import { useState, useEffect } from "react";
+// import ReactPlayer from "react-player";
 
 // const [vid, setVid] = useState(false);
 // const [modal, setModal] = useState(false);
@@ -52,9 +45,3 @@ export default function ShaneLife() {
 }
 
 // {modal && <TrainingOptions />}
-
-///////////////////////////////////////
-
-{
-  /* Google Drive Src */
-}

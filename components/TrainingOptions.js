@@ -3,7 +3,6 @@ import Image from "next/image";
 import ButtonCom from "./ButtonCom";
 import { useState, useEffect } from "react";
 import TrainingCountdownTimer from "./TrainingCountdownTimer";
-import Audio from "./Audio";
 
 export default function TrainingOptions() {
   const [showModal, setShowModal] = useState(false);
@@ -22,9 +21,6 @@ export default function TrainingOptions() {
         <>
           {/* Options */}
           <TrainingCountdownTimer sec={30} />
-          <Audio />
-
-          {/* Look into React Icons to add a speaker icon! */}
 
           <div>
             <h2>You are facing the following three choices</h2>
