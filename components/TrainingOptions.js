@@ -20,6 +20,7 @@ export default function TrainingOptions() {
       {showModal ? (
         <>
           {/* Options */}
+          <audio hidden autoPlay controls src="/audio/whitenoise.mp3" />
           <TrainingCountdownTimer sec={30} />
 
           <div>
