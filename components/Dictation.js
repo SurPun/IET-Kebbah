@@ -4,6 +4,7 @@ import "regenerator-runtime";
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
+import ButtonCom from "./ButtonCom";
 
 export default function Dictaphone({ setTranscript }) {
   const {
@@ -29,9 +30,15 @@ export default function Dictaphone({ setTranscript }) {
   return (
     <>
       <p>Microphone: {listening ? "on" : "off"}</p>
-      <button onClick={SpeechRecognition.startListening}>START</button>
-      <button onClick={SpeechRecognition.stopListening}>STOP</button>
-      <button onClick={resetTranscript}>RESET</button>
+      <ButtonCom
+        btnName={"Record"}
+        BtnOnClick={SpeechRecognition.startListening}
+      />
+      <ButtonCom
+        btnName={"Stop"}
+        BtnOnClick={SpeechRecognition.stopListening}
+      />
+      <ButtonCom btnName={"Reset"} BtnOnClick={resetTranscript} />
     </>
   );
 }

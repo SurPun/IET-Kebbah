@@ -6,9 +6,8 @@
 // [X] Figure out where to store the data before it is sent to DB/airtable
 // [X] Get input value for each question answer and send to localstorage
 // [X] Take user input and store in useState - answer
-// [ ] Survey 2 
+// [ ] Survey 2
 // [ ] Refactor: const [surveyData, setSurveyData] = useState({});
-
 
 // Stretch
 // [X] * Add progress bar to each Q'
@@ -21,27 +20,25 @@
 import { useEffect, useState } from "react";
 import ButtonCom from "../../components/ButtonCom";
 import CountdownTimer from "../../components/CountdownTimer";
-import { useForm } from "react-hook-form"
-// import Dictaphone from "../../components/Dictation";
+import { useForm } from "react-hook-form";
+import Dictaphone from "../../components/Dictation";
 // import createUserResponse from "../../utils/createUserResponse";
 
 export default function Questions() {
+  const [loaded, setLoaded] = useState(false);
+  const [transcript, setTranscript] = useState("");
   const [questionNumber, setQuestionNumber] = useState(1);
   const [answer, setAnswer] = useState({});
-  // const [completed, setCompleted] = useState(false);
-  // const [surveyData, setSurveyData] = useState({});
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    console.log(answer)
+    setLoaded(true);
+  }, []);
+
+  useEffect(() => {
     localStorage.setItem("surveyAnswers", JSON.stringify(answer));
     console.log(localStorage.getItem("surveyAnswers"));
   }, [answer]);
-
-  // useEffect(() => {
-  //   const userDataToSubmit = JSON.parse(localStorage.getItem("surveyAnswers"));
-  //   setSurveyData({ fields: { ...userDataToSubmit } });
-  // }, [completed]);
 
   return (
     <>
@@ -50,10 +47,11 @@ export default function Questions() {
         setQuestionNumber,
         setAnswer,
         answer,
-        // setCompleted,
-        // surveyData,
         register,
-        handleSubmit
+        handleSubmit,
+        setTranscript,
+        transcript,
+        loaded
       )}
     </>
   );
@@ -64,24 +62,36 @@ function questionOptions(
   setQuestionNumber,
   setAnswer,
   answer,
-  // setCompleted,
-  // surveyData,
   register,
-  handleSubmit
+  handleSubmit,
+  setTranscript,
+  transcript,
+  loaded
 ) {
   switch (number) {
     case 1:
       return (
         <>
-          {/* <Dictaphone setTranscript={setTranscript} /> */}
+          {loaded && <Dictaphone setTranscript={setTranscript} />}
           <h2>What is the first thing you will say to him?</h2>
           <CountdownTimer key={number} sec={30} />
           <form>
-            <input key="q1" {...register("answer1")} type="text" placeholder="type here.."></input>
-            <ButtonCom btnName={"Next question"} BtnOnClick={handleSubmit((data) => {
-              setQuestionNumber(2);
-              setAnswer({ ...answer, s1q1: data.answer1 });
-            })} />
+            <input
+              value={transcript}
+              key="q1"
+              {...register("answer1")}
+              type="text"
+              placeholder="type here.."
+              onChange={(e) => setTranscript(e.target.value)}
+            ></input>
+            <ButtonCom
+              btnName={"Next question"}
+              BtnOnClick={handleSubmit((data) => {
+                setTranscript("");
+                setQuestionNumber(2);
+                setAnswer({ ...answer, s1q1: data.answer1 });
+              })}
+            />
           </form>
           <p>1 out of 3</p>
         </>
@@ -89,15 +99,27 @@ function questionOptions(
     case 2:
       return (
         <>
+          {loaded && <Dictaphone setTranscript={setTranscript} />}
           <h2>What assumptions will you make of him?</h2>
 
           <CountdownTimer key={number} sec={30} />
           <form>
-            <input key="q2" {...register("answer2")} type="text" placeholder="type here.."></input>
-            <ButtonCom btnName={"Next question"} BtnOnClick={handleSubmit((data) => {
-              setQuestionNumber(3);
-              setAnswer({ ...answer, s1q2: data.answer2 });
-            })} />
+            <input
+              value={transcript}
+              key="q2"
+              {...register("answer2")}
+              type="text"
+              placeholder="type here.."
+              onChange={(e) => setTranscript(e.target.value)}
+            ></input>
+            <ButtonCom
+              btnName={"Next question"}
+              BtnOnClick={handleSubmit((data) => {
+                setTranscript("");
+                setQuestionNumber(3);
+                setAnswer({ ...answer, s1q2: data.answer2 });
+              })}
+            />
           </form>
           <p> 2 out of 3</p>
         </>
@@ -105,28 +127,30 @@ function questionOptions(
     case 3:
       return (
         <>
+          {loaded && <Dictaphone setTranscript={setTranscript} />}
           <h2>
             Will your main objective be to stop and search or stop and account
             and why?
           </h2>
           <CountdownTimer key={number} sec={30} />
           <form>
-            <input key="q3" {...register("answer3")} type="text" placeholder="type here.."></input>
-            <ButtonCom btnName={"Finish survey"} BtnOnClick={handleSubmit((data) => {
-              setQuestionNumber(0);
-              setAnswer({ ...answer, s1q3: data.answer3 });
-            })} />
+            <input
+              value={transcript}
+              key="q3"
+              {...register("answer3")}
+              type="text"
+              placeholder="type here.."
+              onChange={(e) => setTranscript(e.target.value)}
+            ></input>
+            <ButtonCom
+              btnName={"Finish survey"}
+              BtnOnClick={handleSubmit((data) => {
+                setTranscript("");
+                setQuestionNumber(0);
+                setAnswer({ ...answer, s1q3: data.answer3 });
+              })}
+            />
           </form>
-          {/*           
-          <input type="text" placeholder="type here.."></input>
-          <ButtonCom
-            btnName={"Finish Survey"}
-            BtnOnClick={() => {
-              setQuestionNumber(0);
-              setAnswer({ ...answer, s1q3: "WORKED" });
-              setCompleted(true);
-            }}
-          /> */}
           <p>3 out of 3</p>
         </>
       );
@@ -134,13 +158,7 @@ function questionOptions(
       return (
         <>
           <h2>You've completed this survey</h2>
-          <ButtonCom
-            // BtnOnClick={() => {
-            //   createUserResponse(surveyData);
-            // }}
-            btnName={"To training"}
-            btnLink="/training/intro"
-          />
+          <ButtonCom btnName={"To training"} btnLink="/training/intro" />
         </>
       );
   }
