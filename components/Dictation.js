@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "regenerator-runtime";
+// import { BsRecordCircle } from "react-icons/fa";
 
 import SpeechRecognition, {
   useSpeechRecognition,
@@ -29,7 +30,7 @@ export default function Dictaphone({ setTranscript }) {
   return (
     <>
       <p>Microphone: {listening ? "on" : "off"}</p>
-      <button onClick={SpeechRecognition.startListening}>START</button>
+      <button onClick={SpeechRecognition.startListening}>Play </button>
       <button onClick={SpeechRecognition.stopListening}>STOP</button>
       <button onClick={resetTranscript}>RESET</button>
     </>
