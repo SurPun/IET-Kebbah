@@ -9,7 +9,6 @@ export default function Resource() {
     <>
       <HeadComp title={"IET Resources"} />
       <NavBar />
-
       <main>
         <h1> Feedback Page</h1>
         <Image
@@ -18,13 +17,11 @@ export default function Resource() {
           height={600}
           width={600}
         />
-        <form>
-          <label for="feedback">
-            Thank you for taking part in this training. Please feel free to
-            leave feedback of how this can be improved to benefit you.
-          </label>
-          <input type="text" id="feedback" name="feedback" />
-        </form>
+        <iframe
+        src="https://airtable.com/embed/shrkiPRE11Zoj3rc5?backgroundColor=green"
+        width="100%"
+        height="533"
+      ></iframe>
 
         <p>Additional resources Links</p>
         <ol>
