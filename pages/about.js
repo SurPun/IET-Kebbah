@@ -9,10 +9,10 @@ export default function About() {
 
       <NavBar />
 
-      <main>
-        <h1> About Page</h1>
+      <main className="bg-dim-gray m-7 p-5 rounded-md">
+        <h1 className="text-center font-bold pb-5"> About Page</h1>
 
-        <p>
+        <p className="leading-6 pb-3">
           The founder of I.E.T. (immersive empathy training) Kebbah has 20+
           years of youth work experience in and around the borough of
           Wandsworth, coupled with a shared lived experience of some of the
@@ -23,16 +23,18 @@ export default function About() {
           people who face a number of challenges.
         </p>
 
-        <h3>The key problems that this training aim to address are:</h3>
+        <h3 className="pb-3 font-semibold">
+          The key problems that this training aim to address are:
+        </h3>
 
-        <ul>
+        <ul className="leading-6 pb-3">
           <li>Unconscious bias</li>
           <li>Awareness of cultural challenges</li>
           <li>Awareness of mental health challenges</li>
           <li>Awareness of key issues that young people face</li>
         </ul>
 
-        <p>
+        <p className="leading-6 pb-3">
           I.E.T. (immersive empathy training) is unique as it leverages
           technology to simulate a lived experience of a community member
           (teenage black boy), and puts the learner in his shoes, insisting that
@@ -43,9 +45,11 @@ export default function About() {
           particular stop and search.
         </p>
 
-        <h3>Contact</h3>
-        <Link href="mailto:kebbah@caiushouse.org">kebbah@caiushouse.org</Link>
-        <Link href="tel:+44(0)7723115127">+44(0)7723-115-127</Link>
+        <h3 className="font-semibold">Contact</h3>
+        <Link href="mailto:kebbah@caiushouse.org">
+          Email: kebbah@caiushouse.org
+        </Link>
+        <Link href="tel:+44(0)7723115127">Tel: +44(0)7723-115-127</Link>
       </main>
     </>
   );

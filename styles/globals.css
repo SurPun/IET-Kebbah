@@ -3,7 +3,15 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply bg-gradient-to-b from-dark-green via-light-green to-dim-green h-screen font-sans
-    }
+  body {
+    @apply bg-gradient-to-b from-dark-green via-light-green to-dim-green h-screen font-sans;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  p {
+    @apply text-base;
+  }
 }
