@@ -1,6 +1,17 @@
 import ButtonCom from "../../../components/ButtonCom";
+import { useState, useEffect } from "react";
 
 export default function ChaseDad() {
+  const [showNextBtn, setShowNextBtn] = useState(false);
+
+  // This is a temp hack!
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowNextBtn(true);
+    }, 33250);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
       <iframe
@@ -13,7 +24,7 @@ export default function ChaseDad() {
         className="pointer-events-none"
       ></iframe>
 
-      <ButtonCom btnName={"Next"} btnLink="../shane-school" />
+      {showNextBtn && <ButtonCom btnName={"Next"} btnLink="../shane-school" />}
     </>
   );
 }

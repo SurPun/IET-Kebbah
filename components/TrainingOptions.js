@@ -11,7 +11,7 @@ export default function TrainingOptions() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowModal(true);
-    }, 59000);
+    }, 40000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -20,7 +20,7 @@ export default function TrainingOptions() {
       {showModal ? (
         <>
           {/* Options */}
-          <audio hidden autoPlay controls src="/audio/whitenoise.mp3" />
+          {/* <audio hidden autoPlay controls src="/audio/whitenoise.mp3" /> */}
           <TrainingCountdownTimer sec={30} />
 
           <div>
