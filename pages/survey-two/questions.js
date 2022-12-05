@@ -1,40 +1,49 @@
-// Survey 2 
+// Survey 2
 // [X] Rename questions
 // [x] Add to local storage correctly, update keys to add as
 // [ ] Mark as completed - maybe unneccessary
-// [x] Link to end of training 
+// [x] Link to end of training
 // [x] On btnClick = End training/Resources - send to airtable
 
 import { useEffect, useState } from "react";
 import ButtonCom from "../../components/ButtonCom";
 import CountdownTimer from "../../components/CountdownTimer";
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
 // import Dictaphone from "../../components/Dictation";
 import createUserResponse from "../../utils/createUserResponse";
 import Link from "next/link";
 import HeadComp from "../../components/HeadComp";
-
 
 export default function Questions() {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [answer, setAnswer] = useState({});
   const [completed, setCompleted] = useState(false);
   const [surveyData, setSurveyData] = useState({});
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit } = useForm();
 
   useEffect(() => {
-    console.log(answer)
+    console.log(answer);
     localStorage.setItem("surveyTwoAnswers", JSON.stringify(answer));
     console.log(localStorage.getItem("surveyTwoAnswers"));
   }, [answer]);
 
   useEffect(() => {
-    const previousAnswers = JSON.parse(localStorage.getItem("surveyAnswers"))
+    const previousAnswers = JSON.parse(localStorage.getItem("surveyAnswers"));
     const currentAnswers = JSON.parse(localStorage.getItem("surveyTwoAnswers"));
-    let surveyDataToSubmit = { fields: { ...previousAnswers, ...currentAnswers } }
-    console.log(surveyDataToSubmit)
+    let surveyDataToSubmit = {
+      fields: { ...previousAnswers, ...currentAnswers },
+    };
+    console.log(surveyDataToSubmit);
     setSurveyData(surveyDataToSubmit);
   }, [completed]);
+
+  // Disable Back Button
+  useEffect(() => {
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+      history.go(1);
+    };
+  }, []);
 
   return (
     <>
@@ -72,11 +81,19 @@ function questionOptions(
           <h2>What is the first thing you will say to him?</h2>
           <CountdownTimer key={number} sec={30} />
           <form>
-            <input key="q1" {...register("answer1")} type="text" placeholder="type here.."></input>
-            <ButtonCom btnName={"Next question"} BtnOnClick={handleSubmit((data) => {
-              setQuestionNumber(2);
-              setAnswer({ ...answer, s2q1: data.answer1 });
-            })} />
+            <input
+              key="q1"
+              {...register("answer1")}
+              type="text"
+              placeholder="type here.."
+            ></input>
+            <ButtonCom
+              btnName={"Next question"}
+              BtnOnClick={handleSubmit((data) => {
+                setQuestionNumber(2);
+                setAnswer({ ...answer, s2q1: data.answer1 });
+              })}
+            />
           </form>
           <p>1 out of 3</p>
         </>
@@ -88,11 +105,19 @@ function questionOptions(
 
           <CountdownTimer key={number} sec={30} />
           <form>
-            <input key="q2" {...register("answer2")} type="text" placeholder="type here.."></input>
-            <ButtonCom btnName={"Next question"} BtnOnClick={handleSubmit((data) => {
-              setQuestionNumber(3);
-              setAnswer({ ...answer, s2q2: data.answer2 });
-            })} />
+            <input
+              key="q2"
+              {...register("answer2")}
+              type="text"
+              placeholder="type here.."
+            ></input>
+            <ButtonCom
+              btnName={"Next question"}
+              BtnOnClick={handleSubmit((data) => {
+                setQuestionNumber(3);
+                setAnswer({ ...answer, s2q2: data.answer2 });
+              })}
+            />
           </form>
           <p> 2 out of 3</p>
         </>
@@ -106,12 +131,20 @@ function questionOptions(
           </h2>
           <CountdownTimer key={number} sec={30} />
           <form>
-            <input key="q3" {...register("answer3")} type="text" placeholder="type here.."></input>
-            <ButtonCom btnName={"Finish survey"} BtnOnClick={handleSubmit((data) => {
-              setQuestionNumber(0);
-              setCompleted(true);
-              setAnswer({ ...answer, s2q3: data.answer3 });
-            })} />
+            <input
+              key="q3"
+              {...register("answer3")}
+              type="text"
+              placeholder="type here.."
+            ></input>
+            <ButtonCom
+              btnName={"Finish survey"}
+              BtnOnClick={handleSubmit((data) => {
+                setQuestionNumber(0);
+                setCompleted(true);
+                setAnswer({ ...answer, s2q3: data.answer3 });
+              })}
+            />
           </form>
           <p>3 out of 3</p>
         </>
