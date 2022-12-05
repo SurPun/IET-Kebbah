@@ -12,7 +12,7 @@ module.exports = {
         "light-green": "#3C8880",
         'light-orange': "#e99510",
         "dim-green": "#4B7373",
-        "button-colour": " #061523",
+        "dim-black": "#061523"
       },
     },
   },

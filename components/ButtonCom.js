@@ -4,13 +4,13 @@ import Link from "next/link";
 export default function ButtonCom({
   btnName,
   btnLink = "",
-  BtnOnClick = () => {},
+  BtnOnClick = () => { },
 }) {
   return (
     <Link
       href={btnLink}
       onClick={BtnOnClick}
-      className="bg-button-colour text-white font-bold py-0.5 px-5 rounded-lg"
+      className="bg-dim-black text-white font-bold py-1.5 px-8 rounded-lg"
     >
       {btnName}
     </Link>
