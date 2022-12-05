@@ -1,8 +1,7 @@
 import React from "react";
-import Image from "next/image";
 import ButtonCom from "./ButtonCom";
 import { useState, useEffect } from "react";
-import TrainingCountdownTimer from "./TrainingCountdownTimer";
+import CountdownTimer from "./CountdownTimer";
 
 export default function TrainingOptions2() {
   const [showModal, setShowModal] = useState(false);
@@ -11,7 +10,7 @@ export default function TrainingOptions2() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowModal(true);
-    }, 82000);
+    }, 78000);
     return () => clearTimeout(timer);
   }, []);
 
@@ -19,18 +18,15 @@ export default function TrainingOptions2() {
     <>
       {showModal ? (
         <>
-          <TrainingCountdownTimer sec={30} />
+          <div>⌛</div>
+          <CountdownTimer sec={30} />
 
-          {/* Accept */}
           <div className="flex">
-            <div>
-              <ButtonCom btnName={"Accept"} btnLink="./shane-end" />
-            </div>
+            {/* Accept */}
+            <ButtonCom btnName={"Accept"} btnLink="./shane-end" />
 
             {/* Decline */}
-            <div>
-              <ButtonCom btnName={"Decline"} btnLink="./shane-end" />
-            </div>
+            <ButtonCom btnName={"Decline"} btnLink="./shane-end" />
           </div>
         </>
       ) : null}
