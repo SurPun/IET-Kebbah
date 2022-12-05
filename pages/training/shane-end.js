@@ -1,6 +1,13 @@
 import ButtonCom from "../../components/ButtonCom";
 import HeadComp from "../../components/HeadComp";
+import { useEffect } from "react";
 export default function ShaneEnd() {
+  useEffect(() => {
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+      history.go(1);
+    };
+  }, []);
   return (
     <>
       <HeadComp title={"Shane End"} />

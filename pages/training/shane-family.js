@@ -2,8 +2,17 @@ import React from "react";
 import Image from "next/image";
 import ButtonCom from "../../components/ButtonCom";
 import HeadComp from "../../components/HeadComp";
+import { useEffect } from "react";
 
 export default function ShaneFamily() {
+  // Disable Back Button
+  useEffect(() => {
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+      history.go(1);
+    };
+  }, []);
+
   return (
     <>
       <HeadComp title={"Shane Family"} />

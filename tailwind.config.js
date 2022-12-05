@@ -11,10 +11,10 @@ module.exports = {
         'dim-gray': "#C9D0D7",
         'dark-green': '#1A414B',
         'light-green': '#3C8880',
-        'dim-green': '#4B7373',
+        "dim-green": "#4B7373",
+        "button-colour": " #061523",
       },
     },
   },
   plugins: [],
 };
-
