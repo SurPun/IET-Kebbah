@@ -1,13 +1,25 @@
 import ButtonCom from "../../components/ButtonCom";
 import HeadComp from "../../components/HeadComp";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 export default function ShaneEnd() {
+  const [showNextBtn, setShowNextBtn] = useState(false);
+
+  // This is a temp hack!
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowNextBtn(true);
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Disable Back Button
   useEffect(() => {
     history.pushState(null, null, location.href);
     window.onpopstate = function () {
       history.go(1);
     };
   }, []);
+
   return (
     <>
       <HeadComp title={"Shane End"} />
@@ -22,7 +34,10 @@ export default function ShaneEnd() {
           height="360"
           className="pointer-events-none"
         ></iframe>
-        <ButtonCom btnName={"End"} btnLink="/survey-two/introduction" />
+
+        {showNextBtn && (
+          <ButtonCom btnName={"End"} btnLink="/survey-two/introduction" />
+        )}
       </main>
     </>
   );
