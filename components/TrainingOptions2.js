@@ -19,16 +19,12 @@ export default function TrainingOptions2() {
 
       {showModal ? (
         <>
-          {/* Accept */}
           <div className="flex">
-            <div>
-              <ButtonCom btnName={"Accept"} btnLink="./shane-end" />
-            </div>
+            {/* Accept */}
+            <ButtonCom btnName={"Accept"} btnLink="./shane-end" />
 
             {/* Decline */}
-            <div>
-              <ButtonCom btnName={"Decline"} btnLink="./shane-end" />
-            </div>
+            <ButtonCom btnName={"Decline"} btnLink="./shane-end" />
           </div>
         </>
       ) : null}
