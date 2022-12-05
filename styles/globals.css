@@ -4,6 +4,6 @@
 
 @layer base {
     body {
-        @apply bg-gradient-to-b from-dark-green via-light-green to-dim-green h-screen font-sans
+        @apply bg-gradient-to-b text-2xl from-dark-green via-light-green to-dim-green h-screen font-sans text-dim-black
     }
 }
