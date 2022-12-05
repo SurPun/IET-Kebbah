@@ -1,22 +1,22 @@
 import React from "react";
 import Image from "next/image";
 import ButtonCom from "./ButtonCom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import TrainingCountdownTimer from "./TrainingCountdownTimer";
 
 export default function TrainingOptions2() {
   const [showModal, setShowModal] = useState(false);
 
+  // This is a temp hack!
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowModal(true);
+    }, 82000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
-      <button
-        className="bg-blue-200 text-black active:bg-blue-500 
-        font-bold px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1"
-        type="button"
-        onClick={() => setShowModal((current) => !current)}
-      >
-        Modal
-      </button>
-
       {showModal ? (
         <>
           {/* Accept */}

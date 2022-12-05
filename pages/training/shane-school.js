@@ -3,9 +3,8 @@ import TrainingOptions2 from "../../components/TrainingOptions2";
 export default function ShaneSchool() {
   return (
     <>
-      {/* Google Drive Src */}
       <iframe
-        src="https://geo.dailymotion.com/player/xaygu.html?video=x8fx21t"
+        src="https://geo.dailymotion.com/player/xaygu.html?video=x8g2nto"
         allow="autoplay; fullscreen; picture-in-picture"
         allowfullscreen
         frameborder="0"
@@ -14,6 +13,7 @@ export default function ShaneSchool() {
         className="pointer-events-none"
       ></iframe>
 
+      {/* Options Component*/}
       <TrainingOptions2 />
     </>
   );
