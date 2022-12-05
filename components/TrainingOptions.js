@@ -21,6 +21,7 @@ export default function TrainingOptions() {
         <>
           {/* Options */}
           {/* <audio hidden autoPlay controls src="/audio/whitenoise.mp3" /> */}
+          <div>⌛</div>
           <CountdownTimer sec={30} />
 
           <div>
