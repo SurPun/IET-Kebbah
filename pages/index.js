@@ -22,7 +22,7 @@ export default function Home() {
           width={250}
           alt="IET logo"
         />
-        <h1 className="text-7xl text-center">IMMERSIVE EMPATHY TRAINING</h1>
+        <h1 className="text-7xl text-center">Immersive Empathy Training</h1>
         <ButtonCom
           btnName={"Start"}
           BtnOnClick={() => {
