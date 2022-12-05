@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import ButtonCom from "./ButtonCom";
 import { useState, useEffect } from "react";
-import TrainingCountdownTimer from "./TrainingCountdownTimer";
+import CountdownTimer from "./TrainingCountdownTimer";
 
 export default function TrainingOptions2() {
   const [showModal, setShowModal] = useState(false);
@@ -19,7 +19,7 @@ export default function TrainingOptions2() {
     <>
       {showModal ? (
         <>
-          <TrainingCountdownTimer sec={30} />
+          <CountdownTimer sec={30} />
 
           <div className="flex">
             {/* Accept */}
