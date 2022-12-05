@@ -1,21 +1,25 @@
 import React from "react";
 import TrainingOptions from "../../components/TrainingOptions";
+import HeadComp from "../../components/HeadComp";
 
 export default function ShaneLife() {
   return (
     <>
-      <iframe
-        src="https://geo.dailymotion.com/player/xaygu.html?video=x8g2nnr"
-        allow="autoplay; fullscreen; picture-in-picture"
-        allowfullscreen
-        frameborder="0"
-        width="640"
-        height="360"
-        className="pointer-events-none"
-      ></iframe>
+      <HeadComp title={"Shane Life"} />
+      <main>
+        <iframe
+          src="https://geo.dailymotion.com/player/xaygu.html?video=x8g2nnr"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          frameborder="0"
+          width="640"
+          height="360"
+          className="pointer-events-none"
+        ></iframe>
 
-      {/* Options Component*/}
-      <TrainingOptions />
+        {/* Options Component*/}
+        <TrainingOptions />
+      </main>
     </>
   );
 }
