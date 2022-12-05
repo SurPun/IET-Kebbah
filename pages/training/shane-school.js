@@ -1,7 +1,16 @@
 import TrainingOptions2 from "../../components/TrainingOptions2";
 import HeadComp from "../../components/HeadComp";
+import { useEffect } from "react";
 
 export default function ShaneSchool() {
+  // Disable Back Button
+  useEffect(() => {
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+      history.go(1);
+    };
+  }, []);
+
   return (
     <>
       <HeadComp title={"Shane Schools"} />
