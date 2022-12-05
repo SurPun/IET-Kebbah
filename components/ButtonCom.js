@@ -7,14 +7,10 @@ export default function ButtonCom({
   BtnOnClick = () => {},
 }) {
   return (
-    // <button
-    //   onClick={BtnOnClick}
-    //   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-    // >
     <Link
       href={btnLink}
       onClick={BtnOnClick}
-      className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+      className="bg-button-colour text-white font-bold py-0.5 px-5 rounded-lg"
     >
       {btnName}
     </Link>
