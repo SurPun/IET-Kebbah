@@ -11,6 +11,7 @@ export default function ShaneLife() {
       history.go(1);
     };
   }, []);
+
   return (
     <>
       <HeadComp title={"Shane Life"} />
