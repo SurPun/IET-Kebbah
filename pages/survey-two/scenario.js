@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ButtonCom from "../../components/ButtonCom";
 import ScenarioTranscript from "../../public/textFiles/ScenarioTranscript";
 import HeadComp from "../../components/HeadComp";
 
 export default function Scenario() {
   const [showTranscript, setTranscript] = useState(false);
+
+  // Disable Back Button
+  useEffect(() => {
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+      history.go(1);
+    };
+  }, []);
 
   return (
     <>
