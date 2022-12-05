@@ -5,7 +5,7 @@ export default function ShaneLife() {
   return (
     <>
       <iframe
-        src="https://geo.dailymotion.com/player/xaygu.html?video=x8fx1nc"
+        src="https://geo.dailymotion.com/player/xaygu.html?video=x8g2nnr"
         allow="autoplay; fullscreen; picture-in-picture"
         allowfullscreen
         frameborder="0"
