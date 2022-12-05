@@ -19,6 +19,8 @@ export default function TrainingOptions2() {
     <>
       {showModal ? (
         <>
+          <TrainingCountdownTimer sec={30} />
+
           {/* Accept */}
           <div className="flex">
             <div>
