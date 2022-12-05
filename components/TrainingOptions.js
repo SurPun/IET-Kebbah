@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import ButtonCom from "./ButtonCom";
 import { useState, useEffect } from "react";
-import TrainingCountdownTimer from "./TrainingCountdownTimer";
+import CountdownTimer from "./CountdownTimer";
 
 export default function TrainingOptions() {
   const [showModal, setShowModal] = useState(false);
@@ -21,7 +21,8 @@ export default function TrainingOptions() {
         <>
           {/* Options */}
           {/* <audio hidden autoPlay controls src="/audio/whitenoise.mp3" /> */}
-          <TrainingCountdownTimer sec={30} />
+          <div>⌛</div>
+          <CountdownTimer sec={30} />
 
           <div>
             <h2>You are facing the following three choices</h2>

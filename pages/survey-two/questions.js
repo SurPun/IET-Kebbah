@@ -12,6 +12,8 @@ import { useForm } from "react-hook-form"
 // import Dictaphone from "../../components/Dictation";
 import createUserResponse from "../../utils/createUserResponse";
 import Link from "next/link";
+import HeadComp from "../../components/HeadComp";
+
 
 export default function Questions() {
   const [questionNumber, setQuestionNumber] = useState(1);
@@ -36,6 +38,8 @@ export default function Questions() {
 
   return (
     <>
+      <HeadComp title={"Survey II Questions"} />
+
       {questionOptions(
         questionNumber,
         setQuestionNumber,

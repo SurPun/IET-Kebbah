@@ -22,6 +22,7 @@ import ButtonCom from "../../components/ButtonCom";
 import CountdownTimer from "../../components/CountdownTimer";
 import { useForm } from "react-hook-form";
 import Dictaphone from "../../components/Dictation";
+import HeadComp from "../../components/HeadComp";
 // import createUserResponse from "../../utils/createUserResponse";
 
 export default function Questions() {
@@ -42,6 +43,7 @@ export default function Questions() {
 
   return (
     <>
+      <HeadComp title={"Survey I Questions"} />
       {questionOptions(
         questionNumber,
         setQuestionNumber,

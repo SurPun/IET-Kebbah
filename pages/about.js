@@ -1,19 +1,11 @@
 import NavBar from "../components/NavBar";
+import HeadComp from "../components/HeadComp";
 import Link from "next/link";
-import Head from "next/head";
 
 export default function About() {
   return (
     <>
-      <Head>
-        <title>About Page</title>
-        <meta
-          name="viewport"
-          content="initial-scale=1.0, width=device-width"
-          description="descrite the page for Google and other search engins"
-        />
-        <link rel="icon" href="public/favicon.ico" />
-      </Head>
+      <HeadComp title={"About IET"} />
 
       <NavBar />
 
