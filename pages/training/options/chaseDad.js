@@ -13,6 +13,14 @@ export default function ChaseDad() {
     return () => clearTimeout(timer);
   }, []);
 
+  // Disable Back Button
+  useEffect(() => {
+    history.pushState(null, null, location.href);
+    window.onpopstate = function () {
+      history.go(1);
+    };
+  }, []);
+
   return (
     <>
       <HeadComp title={"IET-Chase Dad"} />
