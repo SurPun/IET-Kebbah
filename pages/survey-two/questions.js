@@ -45,6 +45,26 @@ export default function Questions() {
     };
   }, []);
 
+  const sendData = async (reqData) => {
+
+    try {
+      const response = await fetch("http://localhost:3000/api/training-end", {
+        method: "post",
+        body: JSON.stringify(reqData),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      const json = await response.json();
+      console.log("Success:", JSON.stringify(json));
+      // setMessage("Success");
+    } catch (error) {
+      console.error("Error:", error);
+      // setMessage("Error");
+    }
+  };
+
   return (
     <>
       <HeadComp title={"Survey II Questions"} />
@@ -57,7 +77,8 @@ export default function Questions() {
         setCompleted,
         surveyData,
         register,
-        handleSubmit
+        handleSubmit,
+        sendData
       )}
     </>
   );
@@ -71,7 +92,8 @@ function questionOptions(
   setCompleted,
   surveyData,
   register,
-  handleSubmit
+  handleSubmit,
+  sendData
 ) {
   switch (number) {
     case 1:
@@ -153,15 +175,13 @@ function questionOptions(
       return (
         <>
           <h2>You've completed this survey</h2>
-          <Link href="/training-end">
-            <ButtonCom
-              btnLink={"/training-end"}
-              BtnOnClick={() => {
-                createUserResponse(surveyData);
-              }}
-              btnName={"Finish training"}
-            />
-          </Link>
+          <ButtonCom
+            btnLink={"/training-end"}
+            BtnOnClick={() => sendData(surveyData)
+              // createUserResponse(surveyData);
+            }
+            btnName={"Finish training"}
+          />
         </>
       );
   }
