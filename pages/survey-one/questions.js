@@ -94,14 +94,18 @@ function questionOptions(
               placeholder="type here.."
               onChange={(e) => setTranscript(e.target.value)}
             ></input>
-            <ButtonCom
-              btnName={"Next question"}
-              BtnOnClick={handleSubmit((data) => {
-                setTranscript("");
-                setQuestionNumber(2);
-                setAnswer({ ...answer, s1q1: data.answer1 });
-              })}
-            />
+
+            {/* Show Next button after time is up */}
+            {transcript.length > 0 && (
+              <ButtonCom
+                btnName={"Next question"}
+                BtnOnClick={handleSubmit((data) => {
+                  setTranscript("");
+                  setQuestionNumber(2);
+                  setAnswer({ ...answer, s1q1: data.answer1 });
+                })}
+              />
+            )}
           </form>
           <p>1 out of 3</p>
         </>
@@ -122,14 +126,18 @@ function questionOptions(
               placeholder="type here.."
               onChange={(e) => setTranscript(e.target.value)}
             ></input>
-            <ButtonCom
-              btnName={"Next question"}
-              BtnOnClick={handleSubmit((data) => {
-                setTranscript("");
-                setQuestionNumber(3);
-                setAnswer({ ...answer, s1q2: data.answer2 });
-              })}
-            />
+
+            {/* Show Next button after time is up */}
+            {transcript.length > 0 && (
+              <ButtonCom
+                btnName={"Next question"}
+                BtnOnClick={handleSubmit((data) => {
+                  setTranscript("");
+                  setQuestionNumber(3);
+                  setAnswer({ ...answer, s1q2: data.answer2 });
+                })}
+              />
+            )}
           </form>
           <p> 2 out of 3</p>
         </>
@@ -152,14 +160,18 @@ function questionOptions(
               placeholder="type here.."
               onChange={(e) => setTranscript(e.target.value)}
             ></input>
-            <ButtonCom
-              btnName={"Finish survey"}
-              BtnOnClick={handleSubmit((data) => {
-                setTranscript("");
-                setQuestionNumber(0);
-                setAnswer({ ...answer, s1q3: data.answer3 });
-              })}
-            />
+
+            {/* Show Next button after time is up */}
+            {transcript.length > 0 && (
+              <ButtonCom
+                btnName={"Finish survey"}
+                BtnOnClick={handleSubmit((data) => {
+                  setTranscript("");
+                  setQuestionNumber(0);
+                  setAnswer({ ...answer, s1q3: data.answer3 });
+                })}
+              />
+            )}
           </form>
           <p>3 out of 3</p>
         </>

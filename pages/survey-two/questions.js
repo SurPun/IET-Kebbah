@@ -95,27 +95,44 @@ function questionOptions(
   handleSubmit,
   sendData
 ) {
+  // Get User Input for checking length to show NextBtn Function
+  const [userInput, setUserInput] = useState("");
+
+  const handleChange = (event) => {
+    setUserInput(event.target.value);
+
+    console.log("value is:", event.target.value);
+  };
+
+  console.log(answer);
   switch (number) {
     case 1:
       return (
         <>
           {/* <Dictaphone setTranscript={setTranscript} /> */}
           <h2>What is the first thing you will say to him?</h2>
-          <CountdownTimer key={number} sec={30} />
+          <CountdownTimer key={number} sec={10} />
           <form>
             <input
               key="q1"
               {...register("answer1")}
               type="text"
               placeholder="type here.."
+              onChange={handleChange}
+              value={userInput}
             ></input>
-            <ButtonCom
-              btnName={"Next question"}
-              BtnOnClick={handleSubmit((data) => {
-                setQuestionNumber(2);
-                setAnswer({ ...answer, s2q1: data.answer1 });
-              })}
-            />
+
+            {/* Show Next button after time is up */}
+            {userInput.length > 0 && (
+              <ButtonCom
+                btnName={"Next question"}
+                BtnOnClick={handleSubmit((data) => {
+                  setQuestionNumber(2);
+                  setAnswer({ ...answer, s2q1: data.answer1 });
+                  setUserInput("");
+                })}
+              />
+            )}
           </form>
           <p>1 out of 3</p>
         </>
@@ -132,14 +149,20 @@ function questionOptions(
               {...register("answer2")}
               type="text"
               placeholder="type here.."
+              onChange={handleChange}
+              value={userInput}
             ></input>
-            <ButtonCom
-              btnName={"Next question"}
-              BtnOnClick={handleSubmit((data) => {
-                setQuestionNumber(3);
-                setAnswer({ ...answer, s2q2: data.answer2 });
-              })}
-            />
+            {/* Show Next button after time is up */}
+            {userInput.length > 0 && (
+              <ButtonCom
+                btnName={"Next question"}
+                BtnOnClick={handleSubmit((data) => {
+                  setQuestionNumber(3);
+                  setAnswer({ ...answer, s2q2: data.answer2 });
+                  setUserInput("");
+                })}
+              />
+            )}
           </form>
           <p> 2 out of 3</p>
         </>
@@ -158,15 +181,20 @@ function questionOptions(
               {...register("answer3")}
               type="text"
               placeholder="type here.."
+              onChange={handleChange}
+              value={userInput}
             ></input>
-            <ButtonCom
-              btnName={"Finish survey"}
-              BtnOnClick={handleSubmit((data) => {
-                setQuestionNumber(0);
-                setCompleted(true);
-                setAnswer({ ...answer, s2q3: data.answer3 });
-              })}
-            />
+            {/* Show Next button after time is up */}
+            {userInput.length > 0 && (
+              <ButtonCom
+                btnName={"Finish survey"}
+                BtnOnClick={handleSubmit((data) => {
+                  setQuestionNumber(0);
+                  setCompleted(true);
+                  setAnswer({ ...answer, s2q3: data.answer3 });
+                })}
+              />
+            )}
           </form>
           <p>3 out of 3</p>
         </>
