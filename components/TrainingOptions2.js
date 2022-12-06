@@ -16,17 +16,21 @@ export default function TrainingOptions2() {
 
   return (
     <>
-      {showModal ? (
+      {!showModal ? (
         <>
-          <div>⌛</div>
-          <CountdownTimer sec={30} />
+          <div className="p-20 backdrop-blur-3xl max-w-5xl rounded-md absolute top-20">
+            <div className="flex justify-center">⌛</div>
+            <div className="flex justify-center gap-10">
+              <CountdownTimer sec={30} />
+            </div>
 
-          <div className="flex">
-            {/* Accept */}
-            <ButtonCom btnName={"Accept"} btnLink="./shane-end" />
+            <div className="flex justify-center gap-20">
+              {/* Accept */}
+              <ButtonCom btnName={"Accept"} btnLink="./shane-end" />
 
-            {/* Decline */}
-            <ButtonCom btnName={"Decline"} btnLink="./shane-end" />
+              {/* Decline */}
+              <ButtonCom btnName={"Decline"} btnLink="./shane-end" />
+            </div>
           </div>
         </>
       ) : null}
