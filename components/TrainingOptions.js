@@ -24,47 +24,49 @@ export default function TrainingOptions() {
           <div>⌛</div>
           <CountdownTimer sec={30} />
 
-          <div>
+          <div className="flex bg-white max-w-7xl rounded-m p-10 absolute top-80 justify-content">
             <h2>You are facing the following three choices</h2>
-            <div>
-              <Image
-                src="/optionImg/comfortMum.png"
-                alt="choice of comforting Mum"
-                height={150}
-                width={150}
-              />
-              <ButtonCom
-                btnName={"Comfort Mum"}
-                btnLink="./options/comfortMum" // SENDS US TO QUESTIONS
-              />
-            </div>
+            <div className="flex bg-white max-w-7xl rounded-m">
+              <div>
+                <Image
+                  src="/optionImg/comfortMum.png"
+                  alt="choice of comforting Mum"
+                  height={150}
+                  width={150}
+                />
+                <ButtonCom
+                  btnName={"Comfort Mum"}
+                  btnLink="./options/comfortMum" // SENDS US TO QUESTIONS
+                />
+              </div>
 
-            {/* Comfort Sister */}
-            <div>
-              <Image
-                src="/optionImg/comfortSis.png"
-                alt="choice of comforting Sister"
-                height={150}
-                width={150}
-              />
-              <ButtonCom
-                btnName={"Comfort Sister"}
-                btnLink="./options/comfortSis" // SENDS US TO QUESTIONS
-              />
-            </div>
+              {/* Comfort Sister */}
+              <div>
+                <Image
+                  src="/optionImg/comfortSis.png"
+                  alt="choice of comforting Sister"
+                  height={150}
+                  width={150}
+                />
+                <ButtonCom
+                  btnName={"Comfort Sister"}
+                  btnLink="./options/comfortSis" // SENDS US TO QUESTIONS
+                />
+              </div>
 
-            {/* Chase Dad */}
-            <div>
-              <Image
-                src="/optionImg/chaseDad.jpeg"
-                alt="Choice of chasing Dad"
-                height={150}
-                width={150}
-              />
-              <ButtonCom
-                btnName={"Chase After Dad"}
-                btnLink="./options/chaseDad" // SENDS US TO QUESTIONS
-              />
+              {/* Chase Dad */}
+              <div>
+                <Image
+                  src="/optionImg/chaseDad.jpeg"
+                  alt="Choice of chasing Dad"
+                  height={150}
+                  width={150}
+                />
+                <ButtonCom
+                  btnName={"Chase After Dad"}
+                  btnLink="./options/chaseDad" // SENDS US TO QUESTIONS
+                />
+              </div>
             </div>
           </div>
         </>

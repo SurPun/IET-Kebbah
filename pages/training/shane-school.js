@@ -21,8 +21,8 @@ export default function ShaneSchool() {
             allow="autoplay; fullscreen; picture-in-picture"
             allowfullscreen
             frameborder="0"
-            width="640"
-            height="360"
+            width="854"
+            height="480"
             className="pointer-events-none"
           ></iframe>
 
