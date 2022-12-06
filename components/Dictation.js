@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import "regenerator-runtime";
+import { BsFillRecordCircleFill, BsFillSquareFill } from "react-icons/bs";
+import { AiOutlineAudio, AiOutlineAudioMuted } from "react-icons/ai";
 
 import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
-import ButtonCom from "./ButtonCom";
 
 export default function Dictaphone({ setTranscript }) {
   const {
@@ -28,17 +29,24 @@ export default function Dictaphone({ setTranscript }) {
   }
 
   return (
-    <>
-      <p>Microphone: {listening ? "on" : "off"}</p>
-      <ButtonCom
-        btnName={"Record"}
-        BtnOnClick={SpeechRecognition.startListening}
+    <div className="flex [&>*]:pr-3">
+      <p>
+        {listening ? (
+          <AiOutlineAudio className="h-4" />
+        ) : (
+          <AiOutlineAudioMuted className="h-4" />
+        )}
+      </p>
+      <span>
+        <BsFillRecordCircleFill
+          className="h-4"
+          onClick={SpeechRecognition.startListening}
+        />{" "}
+      </span>
+      <BsFillSquareFill
+        className="h-4"
+        onClick={SpeechRecognition.stopListening}
       />
-      <ButtonCom
-        btnName={"Stop"}
-        BtnOnClick={SpeechRecognition.stopListening}
-      />
-      <ButtonCom btnName={"Reset"} BtnOnClick={resetTranscript} />
-    </>
+    </div>
   );
 }
