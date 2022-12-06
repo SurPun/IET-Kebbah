@@ -9,16 +9,8 @@ import createUserResponse from '../../utils/createUserResponse'
 export default function handler(req, res) {
 
   const data = req.body
-  const example = {
-    "fields": {
-      "s1q1": "Success",
-      "s1q2": "now",
-      "s1q3": "needs",
-      "s2q1": "to",
-      "s2q2": "be",
-      "s2q3": "set up properly!"
-    }
-  }
+  console.log(data)
+
   createUserResponse(data)
   res.status(200).json({ name: 'John Doe' })
 
