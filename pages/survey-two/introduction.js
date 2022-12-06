@@ -15,11 +15,13 @@ export default function Introduction() {
   return (
     <>
       <HeadComp title={"Survey II Intro"} />
-      <main>
-        <h1>End of immersive training</h1>
-        <h2>PART THREE Survey II </h2>
-        <p>Police view scenario</p>
-        <ButtonCom btnName={"To Survey"} btnLink={"scenario"} />
+      <main className="flex flex-col items-center justify-center h-screen">
+        <div className="flex flex-col rounded-lg bg-dim-gray items-center p-10 [&>*]:pb-3">
+          <h1>End of immersive training</h1>
+          <h2>PART THREE Survey II </h2>
+          <p>Police view scenario</p>
+          <ButtonCom btnName={"To Survey"} btnLink={"scenario"} />
+        </div>
       </main>
     </>
   );
