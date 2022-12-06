@@ -22,7 +22,7 @@ export default function TrainingEnd() {
 
   return (
     <>
-      <SurveyAnswers userSurveyAnswers={userSurveyAnswers} />
+      < SurveyAnswers userSurveyAnswers={userSurveyAnswers} />
       <ButtonCom btnName={"Go to resources"} btnLink={"/resource"} />
     </>
   );

@@ -21,7 +21,8 @@
     "react-hook-form": "^7.40.0",
     "react-icons": "^4.7.1",
     "react-player": "^2.11.0",
-    "react-speech-recognition": "^3.10.0"
+    "react-speech-recognition": "^3.10.0",
+    "tailwindcss-children": "^2.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

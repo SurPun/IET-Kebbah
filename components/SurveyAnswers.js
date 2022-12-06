@@ -6,45 +6,36 @@ function SurveyAnswers({ userSurveyAnswers }) {
 
     return (
         <div>
-            <div className='flex flex-row gap-5'>
-                <span><p>Survey one</p></span>
-                <span><p>Survey two</p></span>
+            <div className='w-10/12 mx-auto bg-dim-gray m-7 rounded-md p-5' >
+                <h2 className="text-center font-bold pb-5">Training answers comparison</h2>
+                <table className="table-auto children:border-light-gray">
+                    <thead>
+                        <tr>
+                            <th>Questions</th>
+                            <th>Pre-training answers</th>
+                            <th>Post-training answers</th>
+                        </tr>
+                    </thead>
+                    <tbody className='children:children:text-center'>
+                        <tr className='children:text-xl italic'>
+                            <td className='w-2/12 p-3 font-medium not-italic bg-gray-300'>1. What is the first thing you will say to him?</td>
+                            <td className='w-4/12 p-3 bg-gray-200'>{userSurveyAnswers[0]?.s1q1}</td>
+                            <td className='w-4/12 p-3 bg-gray-200'>{userSurveyAnswers[1]?.s2q1}</td>
+                        </tr>
+                        <tr className='children:text-xl italic'>
+                            <td className='w-2/12 px-3 font-medium not-italic bg-gray-300'>2. What assumptions will you make of him?</td>
+                            <td className='w-4/12 px-3 bg-gray-200'>{userSurveyAnswers[0]?.s1q2}</td>
+                            <td className='w-4/12 px-3 bg-gray-200'>{userSurveyAnswers[1]?.s2q2}</td>
+                        </tr>
+                        <tr className='children:text-xl italic'>
+                            <td className='w-2/12 px-3 font-medium not-italic bg-gray-300'>3. Will your main objective be to stop and search or stop and account and why?</td>
+                            <td className='w-4/12 px-3 bg-gray-200'>{userSurveyAnswers[0]?.s1q3}</td>
+                            <td className='w-4/12 px-3 bg-gray-200'>{userSurveyAnswers[1]?.s2q1}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-
-            <ul>
-                <li>
-                    <h2 className="font-bold">1. What is the first thing you will say to him?</h2>
-                    <div className='flex flex-row gap-5'>
-                        <span className='bg-amber-300'><p>1. {userSurveyAnswers[0]?.s1q1}</p></span>
-                        <span className='bg-lime-500'><p>2. {userSurveyAnswers[1]?.s2q1}</p></span>
-                    </div>
-                </li>
-            </ul>
-
-
-            <ul>
-                <li>
-                    <h2 className="font-bold">2. What assumptions will you make of him?</h2>
-                    <div className='flex flex-row gap-5'>
-                        <span className='bg-amber-300'><p>1. {userSurveyAnswers[0]?.s1q2}</p></span>
-                        <span className='bg-lime-500'><p>2. {userSurveyAnswers[1]?.s2q2}</p></span>
-                    </div>
-                </li>
-            </ul>
-
-
-            <ul>
-                <li>
-                    <h2 className="font-bold">3. Will your main objective be to stop and search or stop and account and why?</h2>
-                    <div className='flex flex-row gap-5'>
-                        <span className='bg-amber-300'><p>1. {userSurveyAnswers[0]?.s1q3}</p></span>
-                        <span className='bg-lime-500'><p>2. {userSurveyAnswers[1]?.s2q3}</p></span>
-                    </div>
-                </li>
-            </ul>
-
-
-
+            {/* Ends here */}
         </div>
     )
 }
