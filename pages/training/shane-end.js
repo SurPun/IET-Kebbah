@@ -24,20 +24,24 @@ export default function ShaneEnd() {
     <>
       <HeadComp title={"Shane End"} />
       {/* Google Drive Src */}
-      <main>
-        <iframe
-          src="https://geo.dailymotion.com/player/xaygu.html?video=x8fx6b9"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen
-          frameborder="0"
-          width="640"
-          height="360"
-          className="pointer-events-none"
-        ></iframe>
+      <main className="flex flex-col items-center justify-center h-screen">
+        <div className="p-20 bg-dim-gray max-w-5xl rounded-md ">
+          <iframe
+            src="https://geo.dailymotion.com/player/xaygu.html?video=x8fx6b9"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            frameborder="0"
+            width="640"
+            height="360"
+            className="pointer-events-none"
+          ></iframe>
 
-        {showNextBtn && (
-          <ButtonCom btnName={"End"} btnLink="/survey-two/introduction" />
-        )}
+          {showNextBtn && (
+            <div className="flex items-center justify-center [&>*]:mr-3 mt-3">
+              <ButtonCom btnName={"End"} btnLink="/survey-two/introduction" />
+            </div>
+          )}
+        </div>
       </main>
     </>
   );
