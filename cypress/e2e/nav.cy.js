@@ -8,10 +8,10 @@ describe("Navigate around website", () => {
     cy.get("li").contains("About");
   });
 
-  // it("should display a image in element div with class image", () => {
-  //   cy.get('[alt="IET logo"]').click();
-
-  // });
+  it("should display a image in element div with class image and clickable to the home page", () => {
+    cy.get('img[alt="IET logo"]').should("be.visible");
+    cy.url().should("include", "/");
+  });
 
   it("About tap should navigate to the about page", () => {
     cy.get("li").contains("Home").click();
