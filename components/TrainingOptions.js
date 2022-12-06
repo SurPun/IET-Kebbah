@@ -24,48 +24,62 @@ export default function TrainingOptions() {
           <div>⌛</div>
           <CountdownTimer sec={30} />
 
-          <div className="flex bg-white max-w-7xl rounded-m p-10 absolute top-80 justify-content">
-            <h2>You are facing the following three choices</h2>
-            <div className="flex bg-white max-w-7xl rounded-m">
-              <div>
-                <Image
-                  src="/optionImg/comfortMum.png"
-                  alt="choice of comforting Mum"
-                  height={150}
-                  width={150}
-                />
-                <ButtonCom
-                  btnName={"Comfort Mum"}
-                  btnLink="./options/comfortMum" // SENDS US TO QUESTIONS
-                />
+          <div className="bg-white max-w-7xl rounded-m p-10 absolute bottom-64 bg-opacity-90">
+            <h2 className="text-center mb-5">
+              You are facing the following three choices
+            </h2>
+            <div className="flex max-w-7xl rounded-m bg-opacity-60 ">
+              <div className="flex flex-col items-center mr-9">
+                <div>
+                  <Image
+                    src="/optionImg/comfortMum.png"
+                    alt="choice of comforting Mum"
+                    height={180}
+                    width={180}
+                  />
+                </div>
+                <div className="mt-5">
+                  <ButtonCom
+                    btnName={"Comfort Mum"}
+                    btnLink="./options/comfortMum" // SENDS US TO QUESTIONS
+                  />
+                </div>
               </div>
 
               {/* Comfort Sister */}
-              <div>
-                <Image
-                  src="/optionImg/comfortSis.png"
-                  alt="choice of comforting Sister"
-                  height={150}
-                  width={150}
-                />
-                <ButtonCom
-                  btnName={"Comfort Sister"}
-                  btnLink="./options/comfortSis" // SENDS US TO QUESTIONS
-                />
+              <div className="flex flex-col items-center mr-9">
+                <div>
+                  <Image
+                    src="/optionImg/comfortSis.png"
+                    alt="choice of comforting Sister"
+                    height={180}
+                    width={180}
+                  />
+                </div>
+                <div className="mt-5">
+                  <ButtonCom
+                    btnName={"Comfort Sister"}
+                    btnLink="./options/comfortSis" // SENDS US TO QUESTIONS
+                  />
+                </div>
               </div>
 
               {/* Chase Dad */}
-              <div>
-                <Image
-                  src="/optionImg/chaseDad.jpeg"
-                  alt="Choice of chasing Dad"
-                  height={150}
-                  width={150}
-                />
-                <ButtonCom
-                  btnName={"Chase After Dad"}
-                  btnLink="./options/chaseDad" // SENDS US TO QUESTIONS
-                />
+              <div className="flex flex-col items-center ">
+                <div>
+                  <Image
+                    src="/optionImg/chaseDad.jpeg"
+                    alt="Choice of chasing Dad"
+                    height={180}
+                    width={180}
+                  />
+                </div>
+                <div className="mt-5">
+                  <ButtonCom
+                    btnName={"Chase After Dad"}
+                    btnLink="./options/chaseDad" // SENDS US TO QUESTIONS
+                  />
+                </div>
               </div>
             </div>
           </div>
