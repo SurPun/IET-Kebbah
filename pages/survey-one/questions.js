@@ -92,7 +92,6 @@ function questionOptions(
               {...register("answer1")}
               type="text"
               placeholder="type here.."
-              required
               onChange={(e) => setTranscript(e.target.value)}
             ></input>
 
