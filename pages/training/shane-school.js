@@ -14,19 +14,21 @@ export default function ShaneSchool() {
   return (
     <>
       <HeadComp title={"Shane Schools"} />
-      <main>
-        <iframe
-          src="https://geo.dailymotion.com/player/xaygu.html?video=x8g2nto"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen
-          frameborder="0"
-          width="640"
-          height="360"
-          className="pointer-events-none"
-        ></iframe>
+      <main className="flex flex-col items-center justify-center h-screen">
+        <div className="p-20 bg-dim-gray max-w-5xl rounded-md ">
+          <iframe
+            src="https://geo.dailymotion.com/player/xaygu.html?video=x8g2nto"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            frameborder="0"
+            width="854"
+            height="480"
+            className="pointer-events-none"
+          ></iframe>
 
-        {/* Options Component*/}
-        <TrainingOptions2 />
+          {/* Options Component*/}
+          <TrainingOptions2 />
+        </div>
       </main>
     </>
   );
