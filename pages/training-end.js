@@ -21,9 +21,11 @@ export default function TrainingEnd() {
   }, []);
 
   return (
-    <>
+    <div className="flex flex-col items-center">
       < SurveyAnswers userSurveyAnswers={userSurveyAnswers} />
-      <ButtonCom btnName={"Go to resources"} btnLink={"/resource"} />
-    </>
+      <div className="flex justify-items-end">
+        <ButtonCom btnName={"Go to resources"} btnLink={"/resource"} />
+      </div>
+    </div>
   );
 }
