@@ -15,7 +15,7 @@ export default function Scenario() {
 
           {showTranscript ? (
             <div className="flex flex-col items-center justify-center">
-              <div className="py-5">
+              <div className="py-5 text-justify">
                 <ScenarioTranscript />
               </div>
               <div className="flex items-center justify-center [&>*]:mr-3 mt-3">

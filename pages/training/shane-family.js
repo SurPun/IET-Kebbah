@@ -30,6 +30,14 @@ export default function ShaneFamily() {
             />
           </div>
           <p className="text-xl my-1 text-white">This is my family</p>
+
+          <p className="text-xl my-1 text-white">
+            You will see what it is like to be me...
+          </p>
+          <div className="mt-3 pb-4">
+            <ButtonCom btnName={"Become me..."} btnLink={"shane-life"} />
+          </div>
+
           <ul className="flex list-none text-center justify-around">
             <li>
               <Image
@@ -59,12 +67,6 @@ export default function ShaneFamily() {
               <p className="text-xl my-1 text-white">Shanice</p>
             </li>
           </ul>
-          <p className="text-xl my-1 text-white">
-            You will see what it is like to be me...
-          </p>
-          <div className="mt-3">
-            <ButtonCom btnName={"Become me..."} btnLink={"shane-life"} />
-          </div>
         </div>
       </main>
     </>

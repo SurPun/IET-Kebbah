@@ -10,7 +10,7 @@ export default function ButtonCom({
     <Link
       href={btnLink}
       onClick={BtnOnClick}
-      className="bg-dim-black text-white font-bold py-2 px-4 rounded-lg  hover:text-light-orange"
+      className="bg-dim-black text-white font-bold py-4 px-8 rounded-lg  hover:text-light-orange"
     >
       {btnName}
     </Link>
