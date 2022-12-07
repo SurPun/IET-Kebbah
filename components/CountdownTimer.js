@@ -14,13 +14,16 @@ export default function CountdownTimer({ sec }) {
 
   return (
     <>
-      <div> Countdown {counter} </div>
+      <div className="rounded-full h-20 w-20 flex items-center justify-center bg-red-500 m-1 border-black border-2">
+        {" "}
+        {counter} s{" "}
+      </div>
 
       {/* Time up Modal */}
       {completed && (
         <div>
           <audio hidden autoPlay controls src="/audio/TimeUp.wav" />
-          Time is Up, Please continue the exercise...
+          Time up, please type your answer...
         </div>
       )}
     </>
