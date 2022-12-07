@@ -78,7 +78,7 @@ function questionOptions(
             1. What is the first thing you will say to him?
           </h2>
 
-          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md w-1/2 m-auto [&>*]:p-3">
+          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md w-1/2 h-1/3 m-auto [&>*]:p-3">
             {loaded && <Dictaphone setTranscript={setTranscript} />}
 
             <form className="">
@@ -124,7 +124,7 @@ function questionOptions(
             2. What assumptions will you make of him?
           </h2>
 
-          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md w-1/2 m-auto rounded-md [&>*]:p-3">
+          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md w-1/2 h-1/3 m-auto [&>*]:p-3">
             {loaded && <Dictaphone setTranscript={setTranscript} />}
 
             <form>
@@ -170,7 +170,7 @@ function questionOptions(
             and why?
           </h2>
 
-          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md w-1/2 m-auto [&>*]:p-3">
+          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md w-1/2 h-1/3 m-auto [&>*]:p-3">
             {loaded && <Dictaphone setTranscript={setTranscript} />}
 
             <form>

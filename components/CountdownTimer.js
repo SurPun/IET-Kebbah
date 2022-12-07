@@ -14,8 +14,8 @@ export default function CountdownTimer({ sec }) {
 
   return (
     <>
-      <div className="flex flex-col items-center" >
-        <p className="font-timer text-red-900 leading-none w-200 text-7xl flex items-center p-auto m-1 ">{counter}{" "} </p>
+      <div className="flex flex-col items-center bg-white px-4" >
+        <p className="font-timer text-red-800 leading-none w-200 text-7xl flex text-center items-center p-auto m-1 border-b-2">{counter}{" "} </p>
         <p>seconds</p>
       </div>
 
