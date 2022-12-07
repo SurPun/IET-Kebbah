@@ -1,29 +1,9 @@
-// [X] Add questions to state and dynamically go to next question
-// [X] Set seconds to state
-// [X] Restart timer as next question is displays
-// [X] Edit Countdown timer to be able to pass props to be set as given seconds
-// [-] Popup warning "You will be given 5 seconds to read a question and then can type youranswer or speak into the microphone
-// [X] Figure out where to store the data before it is sent to DB/airtable
-// [X] Get input value for each question answer and send to localstorage
-// [X] Take user input and store in useState - answer
-// [ ] Survey 2
-// [ ] Refactor: const [surveyData, setSurveyData] = useState({});
-
-// Stretch
-// [X] * Add progress bar to each Q'
-// [-] * Add 5 seconds timer before we start - Decided to to go with this idea.
-// [ ] * Dictation option - when this is used - send to correct input (is going to be changed since last used)
-// [ ] QuestionOptions - refactor switch statement to an array
-// [ ] Show next button once user has started typing (useState?)
-// [ ] Once survey 1 is completed, do not allow user to complete again - useContext!?!?
-
 import { useEffect, useState } from "react";
 import ButtonCom from "../../components/ButtonCom";
 import CountdownTimer from "../../components/CountdownTimer";
 import { useForm } from "react-hook-form";
 import Dictaphone from "../../components/Dictation";
 import HeadComp from "../../components/HeadComp";
-// import createUserResponse from "../../utils/createUserResponse";
 
 export default function Questions() {
   const [loaded, setLoaded] = useState(false);
@@ -81,34 +61,47 @@ function questionOptions(
   switch (number) {
     case 1:
       return (
-        <>
-          {loaded && <Dictaphone setTranscript={setTranscript} />}
-          <h2>What is the first thing you will say to him?</h2>
-          <CountdownTimer key={number} sec={30} />
-          <form>
-            <input
-              value={transcript}
-              key="q1"
-              {...register("answer1")}
-              type="text"
-              placeholder="type here.."
-              onChange={(e) => setTranscript(e.target.value)}
-            ></input>
+        <div className="flex flex-col items-center justify-center h-screen my-auto">
+          <h2 className="text-center text-2xl text-white mt-auto">
+            What is the first thing you will say to him?
+          </h2>
 
-            {/* Show Next button after time is up */}
-            {transcript.length > 0 && (
-              <ButtonCom
-                btnName={"Next question"}
-                BtnOnClick={handleSubmit((data) => {
-                  setTranscript("");
-                  setQuestionNumber(2);
-                  setAnswer({ ...answer, s1q1: data.answer1 });
-                })}
-              />
-            )}
-          </form>
+          <div className="flex flex-col bg-dim-gray items-center justify-center w-1/2 m-auto [&>*]:p-3">
+            {loaded && <Dictaphone setTranscript={setTranscript} />}
+
+            <form>
+              <textarea
+                className="text-center rounded flex-wrap flex mb-3"
+                cols="40"
+                rows="5"
+                value={transcript}
+                key="q1"
+                {...register("answer1")}
+                type="text"
+                placeholder="type here.."
+                onChange={(e) => setTranscript(e.target.value)}
+              ></textarea>
+
+              {/* Show Next button after time is up */}
+              {transcript.length > 0 && (
+                <div className="flex justify-center">
+                  <ButtonCom
+                    btnName={"Next question"}
+                    BtnOnClick={handleSubmit((data) => {
+                      setTranscript("");
+                      setQuestionNumber(2);
+                      setAnswer({ ...answer, s1q1: data.answer1 });
+                    })}
+                  />
+                </div>
+              )}
+            </form>
+
+            <CountdownTimer key={number} sec={30} />
+          </div>
+
           <p>1 out of 3</p>
-        </>
+        </div>
       );
     case 2:
       return (
