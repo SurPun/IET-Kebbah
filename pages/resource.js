@@ -59,13 +59,14 @@ export default function Resource() {
           </div>
 
           <iframe
+            className="rounded-lg"
             src="https://airtable.com/embed/shrkiPRE11Zoj3rc5?backgroundColor=green"
-            height={730}
+            height={658}
             width={550}
           ></iframe>
         </div>
 
-        <span className="flex justify-center mt-5">
+        <span className="flex justify-center mt-2.5">
           <ButtonCom btnName={"Home"} btnLink="/" />
         </span>
       </main>
