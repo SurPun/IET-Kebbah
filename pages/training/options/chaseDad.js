@@ -24,20 +24,22 @@ export default function ChaseDad() {
   return (
     <>
       <HeadComp title={"IET-Chase Dad"} />
-      <main>
-        <iframe
-          src="https://geo.dailymotion.com/player/xaygu.html?video=x8fx217"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen
-          frameborder="0"
-          width="640"
-          height="360"
-          className="pointer-events-none"
-        ></iframe>
+      <main className="flex flex-col items-center justify-center h-screen">
+        <div className="p-20 bg-dim-gray max-w-5xl rounded-md ">
+          <iframe
+            src="https://geo.dailymotion.com/player/xaygu.html?video=x8fx217"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            frameborder="0"
+            width="854"
+            height="480"
+            className="pointer-events-none"
+          ></iframe>
 
-        {showNextBtn && (
-          <ButtonCom btnName={"Next"} btnLink="../shane-school" />
-        )}
+          {showNextBtn && (
+            <ButtonCom btnName={"Next"} btnLink="../shane-school" />
+          )}
+        </div>
       </main>
     </>
   );

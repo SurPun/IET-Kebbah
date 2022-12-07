@@ -20,47 +20,51 @@ export default function ShaneFamily() {
         <div className="text-center">
           {/* you don't need to put public in the directory*/}
           <audio hidden autoPlay controls src="/audio/shaneTalking.mp3" />
-          <h2>Hello, I am Shane</h2>
+          <h2 className="text-2xl mt-6 mb-2 text-white">Hello, I am Shane</h2>
           <div className="flex list-none justify-center">
             <Image
               src="/portraits/shane.jpg"
               alt="image of Shane"
-              height={200}
-              width={200}
+              height={230}
+              width={230}
             />
           </div>
-          <p>This is my family</p>
+          <p className="text-xl my-1 text-white">This is my family</p>
           <ul className="flex list-none text-center justify-around">
             <li>
               <Image
                 src="/portraits/dad.jpg"
                 alt="image of Shane's dad"
-                height={300}
-                width={300}
+                height={230}
+                width={230}
               />
-              <p>Dad</p>
+              <p className="text-xl my-1 text-white">Dad</p>
             </li>
             <li>
               <Image
                 src="/portraits/mum.jpg"
                 alt="image of Shane's mom"
-                height={300}
-                width={300}
+                height={230}
+                width={230}
               />
-              <p>Mum</p>
+              <p className="text-xl my-1 text-white">Mum</p>
             </li>
             <li>
               <Image
                 src="/portraits/shanice.jpg"
                 alt="image of Shane's sister"
-                height={300}
-                width={300}
+                height={230}
+                width={230}
               />
-              <p>Shanice</p>
+              <p className="text-xl my-1 text-white">Shanice</p>
             </li>
           </ul>
-          <p>You willl see what it is like to be me...</p>
-          <ButtonCom btnName={"Become me..."} btnLink={"shane-life"} />
+          <p className="text-xl my-1 text-white">
+            You will see what it is like to be me...
+          </p>
+          <div className="mt-3">
+            <ButtonCom btnName={"Become me..."} btnLink={"shane-life"} />
+          </div>
         </div>
       </main>
     </>
