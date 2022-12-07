@@ -18,6 +18,10 @@ export default function Scenario() {
               <div className="py-5 text-justify">
                 <ScenarioTranscript />
               </div>
+              <p className="text-red-600">
+                You will be given 5 seconds to read a question and then can type
+                your answer or speak into the microphone
+              </p>
               <div className="flex items-center justify-center [&>*]:mr-3 mt-3">
                 <ButtonCom
                   btnName={"Start Survey"}
@@ -33,7 +37,7 @@ export default function Scenario() {
               </div>
             </div>
           ) : (
-            <div>
+            <div className="flex flex-col items-center justify-center">
               <iframe
                 src="https://geo.dailymotion.com/player/xaygu.html?video=x8fx226"
                 allow="autoplay; fullscreen; picture-in-picture"
@@ -41,8 +45,12 @@ export default function Scenario() {
                 frameborder="0"
                 width="640"
                 height="360"
-                className="pointer-events-none"
+                className="pointer-events-none mb-5"
               ></iframe>
+              <p className="text-red-600">
+                You will be given 5 seconds to read a question and then can type
+                your answer or speak into the microphone
+              </p>
               <div className="flex items-center justify-center [&>*]:mr-3 mt-3">
                 <ButtonCom
                   btnName={"Start Survey"}
@@ -56,10 +64,6 @@ export default function Scenario() {
                   }}
                 />
               </div>
-              <p className="text-red-600">
-                You will be given 5 seconds to read a question and then can type
-                your answer or speak into the microphone
-              </p>
             </div>
           )}
         </div>

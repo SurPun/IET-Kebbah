@@ -9,7 +9,7 @@ export default function Introduction() {
         <div className="flex flex-col rounded-lg bg-dim-gray items-center p-10 [&>*]:pb-3">
           <h1>Police perspective scenario</h1>
 
-          <ButtonCom btnName={"To scenario"} btnLink="scenario" />
+          <ButtonCom btnName={"To Scenario"} btnLink="scenario" />
         </div>
       </main>
     </>
