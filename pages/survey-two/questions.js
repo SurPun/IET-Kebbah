@@ -52,7 +52,6 @@ export default function Questions() {
   }, []);
 
   const sendData = async (reqData) => {
-
     try {
       const response = await fetch("http://localhost:3000/api/training-end", {
         method: "post",
