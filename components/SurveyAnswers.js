@@ -6,7 +6,7 @@ function SurveyAnswers({ userSurveyAnswers }) {
 
     return (
         <div>
-            <div className='w-12/12 mx-auto bg-dim-gray m-7 rounded-md p-5' >
+            <div className='w-full mx-auto bg-dim-gray m-7 rounded-md p-5' >
                 <h2 className="text-center font-bold pb-5 underline leading-6 pb-6">Training answers comparison</h2>
                 <table className="table-auto children:border-light-gray">
                     <thead>
@@ -18,7 +18,7 @@ function SurveyAnswers({ userSurveyAnswers }) {
                     </thead>
                     <tbody className='children:children:text-center'>
                         <tr className='children:text-lg rounded-md children:box-border italic'>
-                            <td className='w-4/12 p-3 font-medium not-italic bg-gray-300 border-r-4 border-b-4'>1. What is the first thing you will say to him?</td>
+                            <td className='w-5/12 p-3 font-medium not-italic bg-gray-300 border-r-4 border-b-4'>1. What is the first thing you will say to him?</td>
                             <td className='w-4/12 p-3 bg-gray-300 border-b-4 border-r-4'>{userSurveyAnswers[0]?.s1q1}</td>
                             <td className='w-4/12 p-3 bg-gray-300 border-b-4'>"{userSurveyAnswers[1]?.s2q1}"</td>
                         </tr>
