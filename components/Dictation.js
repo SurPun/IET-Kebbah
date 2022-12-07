@@ -29,7 +29,7 @@ export default function Dictaphone({ setTranscript }) {
   }
 
   return (
-    <div className="flex [&>*]:pr-3">
+    <div className="flex [&>*]:m-1.5">
       <p>
         {listening ? (
           <AiOutlineAudio className="h-4" />

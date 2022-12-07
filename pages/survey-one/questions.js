@@ -1,4 +1,4 @@
-// TO DO 
+// TO DO
 // - [X] Survey one - style all Qs
 // - [ ] Survey two - style all Qs
 // - [ ] Recording icons - description before survey
@@ -8,7 +8,6 @@
 // - [ ] timer?!
 // - [ ] buttons are terrible
 // - [ ] distressins
-
 
 import { useEffect, useState } from "react";
 import ButtonCom from "../../components/ButtonCom";
@@ -73,13 +72,15 @@ function questionOptions(
   switch (number) {
     case 1:
       return (
-        <div className="flex flex-col items-center justify-center h-screen my-auto">
-          <h2 className="text-center text-2xl text-white mt-auto">
+        <div className="flex flex-col items-center justify-center h-screen my-auto pt-10 ">
+          <h2 className="text-center text-2xl text-white mt-auto mb-10">
             1. What is the first thing you will say to him?
           </h2>
 
-          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md w-1/2 h-1/3 m-auto [&>*]:p-3">
-            {loaded && <Dictaphone setTranscript={setTranscript} />}
+          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md w-1/2 h-1/3 m-auto">
+            {loaded && (
+              <Dictaphone  setTranscript={setTranscript} />
+            )}
 
             <form className="">
               <textarea
@@ -108,8 +109,6 @@ function questionOptions(
                 </div>
               )}
             </form>
-
-
           </div>
           <div className="flex h-80 flex-col items-center children:py-4 pb-12">
             <CountdownTimer key={number} sec={30} />
@@ -154,7 +153,6 @@ function questionOptions(
                 </div>
               )}
             </form>
-
           </div>
           <div className="flex h-80 flex-col items-center children:py-4 pb-12">
             <CountdownTimer key={number} sec={30} />
@@ -166,8 +164,8 @@ function questionOptions(
       return (
         <div className="flex flex-col items-center justify-center h-screen my-auto">
           <h2 className="text-center text-2xl text-white mt-auto">
-            3. Will your main objective be to stop and search or stop and account
-            and why?
+            3. Will your main objective be to stop and search or stop and
+            account and why?
           </h2>
 
           <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md w-1/2 h-1/3 m-auto [&>*]:p-3">
@@ -211,12 +209,14 @@ function questionOptions(
       return (
         <>
           <div className="flex flex-col items-center justify-items-center h-screen">
-
             <div className="flex flex-col items-center justify-center w-1/4 m-auto">
               <h2 className="text-center text-2xl text-white mt-auto p-6">
                 Thank you for completing the survey
               </h2>
-              <ButtonCom btnName={"Start immersive training"} btnLink="/training/intro" />
+              <ButtonCom
+                btnName={"Start immersive training"}
+                btnLink="/training/intro"
+              />
             </div>
             <p>End of survey one</p>
           </div>
