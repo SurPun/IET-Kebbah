@@ -7,7 +7,7 @@ export default function Screensize() {
       <div className="bg-dim-gray rounded-md [&>*]:p-6">
         <h1 className="md:hidden text-center"> Sorry </h1>
 
-        <div className="flex justify-center">
+        <div className="flex justify-center md:hidden  ">
           <Image
             src="/IET/IET-logo.png"
             height={100}
