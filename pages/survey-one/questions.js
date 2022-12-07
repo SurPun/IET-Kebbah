@@ -1,10 +1,12 @@
 // TO DO 
+// - [X] Survey one - style all Qs
+// - [ ] Survey two - style all Qs
+// - [ ] Recording icons - description before survey
 // - [ ] Center text of input
 // - [ ] numerate question
 // - [ ] progress bar
 // - [ ] timer?!
 // - [ ] buttons are terrible
-// - [ ]
 
 
 import { useEffect, useState } from "react";
@@ -210,7 +212,7 @@ function questionOptions(
               <h2 className="text-center text-2xl text-white mt-auto p-6">
                 Thank you for completing the survey
               </h2>
-              <ButtonCom btnName={"To training"} btnLink="/training/intro" />
+              <ButtonCom btnName={"Start immersive training"} btnLink="/training/intro" />
             </div>
             <p>End of survey one</p>
           </div>
