@@ -11,7 +11,6 @@ export default function TrainingOptions2() {
     const timer = setTimeout(() => {
       setShowModal(true);
     }, 78000);
-    // 78000
     return () => clearTimeout(timer);
   }, []);
 
@@ -23,12 +22,10 @@ export default function TrainingOptions2() {
             <h2 className="text-center font-bold mb-20 text-6xl">
               Will you Accept the lift to school?
             </h2>
-
-            <div className="flex flex-col items-center justify-center mt-5">
+            <div className="flex justify-content-center flex-col items-center">
               <CountdownTimer sec={30} />
             </div>
-
-            <div className="flex justify-center gap-10 mt-8">
+            <div className="flex justify-center gap-5 mt-10">
               {/* Accept */}
               <ButtonCom btnName={"Accept"} btnLink="./shane-end" />
 

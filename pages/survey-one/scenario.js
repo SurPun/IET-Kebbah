@@ -15,7 +15,7 @@ export default function Scenario() {
 
           {showTranscript ? (
             <div className="flex flex-col items-center justify-center">
-              <div className="py-5">
+              <div className="py-5 text-justify">
                 <ScenarioTranscript />
               </div>
               <div className="flex items-center justify-center [&>*]:mr-3 mt-3">
@@ -56,6 +56,10 @@ export default function Scenario() {
                   }}
                 />
               </div>
+              <p className="text-red-600">
+                You will be given 5 seconds to read a question and then can type
+                your answer or speak into the microphone
+              </p>
             </div>
           )}
         </div>

@@ -9,17 +9,23 @@ import { useEffect, useState } from "react";
 import ButtonCom from "../../components/ButtonCom";
 import CountdownTimer from "../../components/CountdownTimer";
 import { useForm } from "react-hook-form";
-// import Dictaphone from "../../components/Dictation";
+import Dictaphone from "../../components/Dictation";
 import createUserResponse from "../../utils/createUserResponse";
 import Link from "next/link";
 import HeadComp from "../../components/HeadComp";
 
 export default function Questions() {
+  const [loaded, setLoaded] = useState(false);
+  const [transcript, setTranscript] = useState("");
   const [questionNumber, setQuestionNumber] = useState(1);
   const [answer, setAnswer] = useState({});
   const [completed, setCompleted] = useState(false);
   const [surveyData, setSurveyData] = useState({});
   const { register, handleSubmit } = useForm();
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
 
   useEffect(() => {
     console.log(answer);
@@ -77,7 +83,10 @@ export default function Questions() {
         surveyData,
         register,
         handleSubmit,
-        sendData
+        sendData,
+        setTranscript,
+        transcript,
+        loaded
       )}
     </>
   );
@@ -92,7 +101,10 @@ function questionOptions(
   surveyData,
   register,
   handleSubmit,
-  sendData
+  sendData,
+  setTranscript,
+  transcript,
+  loaded
 ) {
   // Get User Input for checking length to show NextBtn Function
   const [userInput, setUserInput] = useState("");
@@ -107,110 +119,166 @@ function questionOptions(
   switch (number) {
     case 1:
       return (
-        <>
-          {/* <Dictaphone setTranscript={setTranscript} /> */}
-          <h2>What is the first thing you will say to him?</h2>
-          <CountdownTimer key={number} sec={30} />
-          <form>
-            <input
-              key="q1"
-              {...register("answer1")}
-              type="text"
-              placeholder="type here.."
-              onChange={handleChange}
-              value={userInput}
-            ></input>
+        <div className="flex flex-col items-center justify-center h-screen my-auto">
+          <h2 className="text-center text-2xl text-white mt-auto">
+            1. What is the first thing you will say to him?
+          </h2>
 
-            {/* Show Next button after time is up */}
-            {userInput.length > 0 && (
-              <ButtonCom
-                btnName={"Next question"}
-                BtnOnClick={handleSubmit((data) => {
-                  setQuestionNumber(2);
-                  setAnswer({ ...answer, s2q1: data.answer1 });
-                  setUserInput("");
-                })}
-              />
-            )}
-          </form>
+          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md w-1/2 m-auto [&>*]:p-3">
+            {loaded && <Dictaphone setTranscript={setTranscript} />}
+
+            <form>
+              <textarea
+                className="text-center rounded mb-3 pt-10 px-10"
+                cols="40"
+                rows="2"
+                value={transcript}
+                key="q1"
+                {...register("answer1")}
+                type="text"
+                placeholder="Type here..."
+                onChange={(e) => setTranscript(e.target.value)}
+              ></textarea>
+
+              {/* Show Next button after time is up */}
+              {transcript.length > 0 && (
+                <div className="flex justify-center">
+                  <ButtonCom
+                    btnName={"Next question"}
+                    BtnOnClick={handleSubmit((data) => {
+                      setTranscript("");
+                      setQuestionNumber(2);
+                      setAnswer({ ...answer, s2q1: data.answer1 });
+                    })}
+                  />
+                </div>
+              )}
+            </form>
+          </div>
+          <div className="flex h-80 flex-col items-center children:py-4 pb-12">
+            <CountdownTimer key={number} sec={30} />
+          </div>
+
           <p>1 out of 3</p>
-        </>
+        </div>
       );
     case 2:
       return (
-        <>
-          <h2>What assumptions will you make of him?</h2>
+        <div className="flex flex-col items-center justify-center h-screen my-auto">
+          <h2 className="text-center text-2xl text-white mt-auto">
+            2. What assumptions will you make of him?
+          </h2>
 
-          <CountdownTimer key={number} sec={30} />
-          <form>
-            <input
-              key="q2"
-              {...register("answer2")}
-              type="text"
-              placeholder="type here.."
-              onChange={handleChange}
-              value={userInput}
-            ></input>
-            {/* Show Next button after time is up */}
-            {userInput.length > 0 && (
-              <ButtonCom
-                btnName={"Next question"}
-                BtnOnClick={handleSubmit((data) => {
-                  setQuestionNumber(3);
-                  setAnswer({ ...answer, s2q2: data.answer2 });
-                  setUserInput("");
-                })}
-              />
-            )}
-          </form>
-          <p> 2 out of 3</p>
-        </>
+          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md w-1/2 m-auto [&>*]:p-3">
+            {loaded && <Dictaphone setTranscript={setTranscript} />}
+
+            <form>
+              <textarea
+                className="text-center rounded mb-3 pt-10 px-10"
+                cols="40"
+                rows="2"
+                value={transcript}
+                key="q2"
+                {...register("answer2")}
+                type="text"
+                placeholder="Type here..."
+                onChange={(e) => setTranscript(e.target.value)}
+              ></textarea>
+
+              {/* Show Next button after time is up */}
+              {transcript.length > 0 && (
+                <div className="flex justify-center">
+                  <ButtonCom
+                    btnName={"Next question"}
+                    BtnOnClick={handleSubmit((data) => {
+                      setTranscript("");
+                      setQuestionNumber(3);
+                      setAnswer({ ...answer, s2q2: data.answer2 });
+                    })}
+                  />
+                </div>
+              )}
+            </form>
+          </div>
+          <div className="flex h-80 flex-col items-center children:py-4 pb-12">
+            <CountdownTimer key={number} sec={30} />
+          </div>
+
+          <p>2 out of 3</p>
+        </div>
       );
     case 3:
       return (
-        <>
-          <h2>
-            Will your main objective be to stop and search or stop and account
+        <div className="flex flex-col items-center justify-center h-screen my-auto">
+          <h2 className="text-center text-2xl text-white mt-auto">
+            3. Will your main objective be to stop and search or stop and account
             and why?
           </h2>
-          <CountdownTimer key={number} sec={30} />
-          <form>
-            <input
-              key="q3"
-              {...register("answer3")}
-              type="text"
-              placeholder="type here.."
-              onChange={handleChange}
-              value={userInput}
-            ></input>
-            {/* Show Next button after time is up */}
-            {userInput.length > 0 && (
-              <ButtonCom
-                btnName={"Finish survey"}
-                BtnOnClick={handleSubmit((data) => {
-                  setQuestionNumber(0);
-                  setCompleted(true);
-                  setAnswer({ ...answer, s2q3: data.answer3 });
-                })}
-              />
-            )}
-          </form>
+
+          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md w-1/2 m-auto [&>*]:p-3">
+            {loaded && <Dictaphone setTranscript={setTranscript} />}
+
+            <form>
+              <textarea
+                className="text-center rounded mb-3 pt-10 px-10"
+                cols="40"
+                rows="2"
+                value={transcript}
+                key="q3"
+                {...register("answer3")}
+                type="text"
+                placeholder="Type here..."
+                onChange={(e) => setTranscript(e.target.value)}
+              ></textarea>
+
+              {/* Show Next button after time is up */}
+              {transcript.length > 0 && (
+                <div className="flex justify-center">
+                  <ButtonCom
+                    btnName={"Next question"}
+                    BtnOnClick={handleSubmit((data) => {
+                      setTranscript("");
+                      setQuestionNumber(0);
+                      setAnswer({ ...answer, s2q3: data.answer3 });
+                    })}
+                  />
+                </div>
+              )}
+            </form>
+          </div>
+          <div className="flex h-80 flex-col items-center children:py-4 pb-12">
+            <CountdownTimer key={number} sec={30} />
+          </div>
+
           <p>3 out of 3</p>
-        </>
+        </div>
       );
     case 0:
       return (
         <>
-          <h2>You've completed this survey</h2>
-          <ButtonCom
-            btnLink={"/training-end"}
-            BtnOnClick={
-              () => sendData(surveyData)
-              // createUserResponse(surveyData);
-            }
-            btnName={"Finish training"}
-          />
+          <div className="flex flex-col items-center justify-items-center h-screen">
+
+            <div className="flex flex-col items-center justify-center w-1/4 m-auto">
+              <h2 className="text-center text-2xl text-white mt-auto p-6">
+                Thank you for completing the survey
+              </h2>
+              <ButtonCom btnName={"Finish training"} btnLink="/training-end" BtnOnClick={() => sendData(surveyData)} />
+            </div>
+            <p>End of survey two</p>
+          </div>
         </>
-      );
+      )
+    // (
+    //   <>
+    //     <h2>You've completed this survey</h2>
+    //     <ButtonCom
+    //       btnLink={"/training-end"}
+    //       BtnOnClick={() => sendData(surveyData)
+    //         // createUserResponse(surveyData);
+    //       }
+    //       btnName={"Finish training"}
+    //     />
+    //   </>
+    // );
   }
 }

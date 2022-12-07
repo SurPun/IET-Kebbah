@@ -1,5 +1,5 @@
-import Screensize from "../components/Screensize";
 import "../styles/globals.css";
+import Screensize from "../components/Screensize";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -16,5 +16,3 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
-
-// Any screen less than 1024px in width will be blocked. -- 854px
