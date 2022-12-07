@@ -56,6 +56,10 @@ export default function Scenario() {
                   }}
                 />
               </div>
+              <p className="text-red-600">
+                You will be given 5 seconds to read a question and then can type
+                your answer or speak into the microphone
+              </p>
             </div>
           )}
         </div>

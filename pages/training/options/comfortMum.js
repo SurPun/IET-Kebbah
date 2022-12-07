@@ -37,9 +37,7 @@ export default function ComfortMom() {
           ></iframe>
 
           {showNextBtn && (
-            <div className="text-center mt-5">
-              <ButtonCom btnName={"Next"} btnLink="../shane-school" />
-            </div>
+            <ButtonCom btnName={"Next"} btnLink="../shane-school" />
           )}
         </div>
       </main>
