@@ -13,7 +13,7 @@ export default function Resource() {
         <div className="flex justify-center mt-20 relative">
           <div>
             <Image
-              className="rounded-lg"
+              className="rounded-lg h-full"
               src="/IET/iceberg.jpg"
               alt="image of icerberg"
               height={700}
