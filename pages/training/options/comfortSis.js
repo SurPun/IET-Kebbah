@@ -36,7 +36,9 @@ export default function ComfortSis() {
             className="pointer-events-none"
           ></iframe>
           {showNextBtn && (
-            <ButtonCom btnName={"Next"} btnLink="../shane-school" />
+            <div className="text-center mt-5">
+              <ButtonCom btnName={"Next"} btnLink="../shane-school" />
+            </div>
           )}
         </div>
       </main>

@@ -46,7 +46,6 @@ export default function Questions() {
   }, []);
 
   const sendData = async (reqData) => {
-
     try {
       const response = await fetch("http://localhost:3000/api/training-end", {
         method: "post",
@@ -111,7 +110,7 @@ function questionOptions(
         <>
           {/* <Dictaphone setTranscript={setTranscript} /> */}
           <h2>What is the first thing you will say to him?</h2>
-          <CountdownTimer key={number} sec={10} />
+          <CountdownTimer key={number} sec={30} />
           <form>
             <input
               key="q1"
@@ -205,7 +204,8 @@ function questionOptions(
           <h2>You've completed this survey</h2>
           <ButtonCom
             btnLink={"/training-end"}
-            BtnOnClick={() => sendData(surveyData)
+            BtnOnClick={
+              () => sendData(surveyData)
               // createUserResponse(surveyData);
             }
             btnName={"Finish training"}
