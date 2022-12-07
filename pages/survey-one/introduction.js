@@ -7,11 +7,8 @@ export default function Introduction() {
       <HeadComp title={"Survey I Intro"} />
       <main className="flex flex-col items-center justify-center h-screen">
         <div className="flex flex-col rounded-lg bg-dim-gray items-center p-10 [&>*]:pb-3">
-          <h1>PART ONE</h1>
-          <p>Survey I</p>
-          <p>Police View Scenario</p>
-          
-          <ButtonCom btnName={"To scenario"} btnLink="scenario" />
+          <h1>Police Perspective Scenario</h1>
+          <ButtonCom btnName={"To Survey"} btnLink="scenario" />
         </div>
       </main>
     </>
