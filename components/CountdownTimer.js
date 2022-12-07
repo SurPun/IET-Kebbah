@@ -14,7 +14,7 @@ export default function CountdownTimer({ sec }) {
 
   return (
     <>
-      <div className="rounded-full h-20 w-20 flex items-center justify-center bg-red-500 m-1 border-black border-2">
+      <div className="rounded-full h-20 w-20 flex items-center justify-center m-1 border-red border-2">
         {" "}
         {counter} s{" "}
       </div>

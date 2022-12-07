@@ -7,6 +7,7 @@
 // - [ ] progress bar
 // - [ ] timer?!
 // - [ ] buttons are terrible
+// - [ ] distressins
 
 
 import { useEffect, useState } from "react";
