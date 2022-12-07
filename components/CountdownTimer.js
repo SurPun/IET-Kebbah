@@ -14,9 +14,11 @@ export default function CountdownTimer({ sec }) {
 
   return (
     <>
-      <div className="rounded-full h-20 w-20 flex items-center justify-center bg-red-500 m-1 border-black border-2">
-         {counter} s{" "}
+      <div className="rounded flex flex-col items-center  px-4" >
+        {counter > 10 ? (<p className="font-timer text-dim-black leading-none w-200 text-7xl flex text-center items-center p-auto m-1 border-b-2">{counter}{" "} </p>) : (<p className="font-timer text-red-600 leading-none w-200 text-7xl animate-ping flex text-center items-center p-auto m-1 border-b-2">{counter}{" "} </p>)}
+        <p>seconds</p>
       </div>
+
 
       {/* Time up Modal */}
       {completed && (

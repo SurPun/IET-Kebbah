@@ -17,6 +17,8 @@ module.exports = {
 
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
+        'timer': ["Zen+Dots"],
+        'poppins': ['Poppins', 'sans-serif'],
       },
     },
   },
