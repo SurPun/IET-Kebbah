@@ -130,9 +130,9 @@ function questionOptions(
 
             <form>
               <textarea
-                className="text-center rounded flex-wrap flex mb-3"
+                className="text-center rounded mb-3 pt-10 px-10"
                 cols="40"
-                rows="5"
+                rows="2"
                 value={transcript}
                 key="q1"
                 {...register("answer1")}
@@ -155,7 +155,8 @@ function questionOptions(
                 </div>
               )}
             </form>
-
+          </div>
+          <div className="flex h-80 flex-col items-center children:py-4 pb-12">
             <CountdownTimer key={number} sec={30} />
           </div>
 
@@ -174,9 +175,9 @@ function questionOptions(
 
             <form>
               <textarea
-                className="text-center rounded flex-wrap flex mb-3"
+                className="text-center rounded mb-3 pt-10 px-10"
                 cols="40"
-                rows="5"
+                rows="2"
                 value={transcript}
                 key="q2"
                 {...register("answer2")}
@@ -199,7 +200,8 @@ function questionOptions(
                 </div>
               )}
             </form>
-
+          </div>
+          <div className="flex h-80 flex-col items-center children:py-4 pb-12">
             <CountdownTimer key={number} sec={30} />
           </div>
 
@@ -219,9 +221,9 @@ function questionOptions(
 
             <form>
               <textarea
-                className="text-center rounded flex-wrap flex mb-3"
+                className="text-center rounded mb-3 pt-10 px-10"
                 cols="40"
-                rows="5"
+                rows="2"
                 value={transcript}
                 key="q3"
                 {...register("answer3")}
@@ -244,7 +246,8 @@ function questionOptions(
                 </div>
               )}
             </form>
-
+          </div>
+          <div className="flex h-80 flex-col items-center children:py-4 pb-12">
             <CountdownTimer key={number} sec={30} />
           </div>
 
