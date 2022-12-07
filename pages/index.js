@@ -44,7 +44,7 @@ export default function Home() {
                 Introduction to Immersive Empathy Training
               </h2>
 
-              <div className="relative right-0.5 top-4">
+              <div className="relative right-1.5 top-5">
                 <ButtonCom
                   btnName={"X"}
                   BtnOnClick={() => setShowModal(false)}
