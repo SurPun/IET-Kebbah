@@ -7,7 +7,10 @@ function MyApp({ Component, pageProps }) {
       <div className="max-md:hidden">
         <Component {...pageProps} />
       </div>
-      <Screensize />
+
+      <div className="lg:hidden md:hidden">
+        <Screensize />
+      </div>
     </>
   );
 }

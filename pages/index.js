@@ -38,22 +38,27 @@ export default function Home() {
 
         {/* Modal */}
         {showModal && (
-          <div className="absolute bottom-10 left-auto p-10 bg-dim-gray max-w-7xl rounded-md">
-            <div className="absolute right-2 top-2">
-              <ButtonCom btnName={"X"} BtnOnClick={() => setShowModal(false)} />
-            </div>
+          <div className="fixed  bg-dim-gray max-w-full rounded-md mb-10 mt-40">
+            <div className=" flex">
+              <h2 className="text-5xl font-bold text-center mt-10 ml-10 mr-10 mb-5">
+                Introduction to Immersive Empathy Training
+              </h2>
 
-            <h2 className="text-5xl pb-4 text-center">
-              Introduction to Immersive Empathy Training
-            </h2>
+              <div className="absolute right-1 top-2">
+                <ButtonCom
+                  btnName={"X"}
+                  BtnOnClick={() => setShowModal(false)}
+                />
+              </div>
+            </div>
 
             {text ? (
               <div>
-                <div className="max-w-4xl">
+                <div className="max-w-4xl text-justify m-auto text-6xl">
                   <IntroToTraining />
                 </div>
 
-                <div className="text-center pb-4 pt-3">
+                <div className="text-center mt-5 pb-4 pt-3">
                   <ButtonCom
                     btnName={"Watch video instead"}
                     BtnOnClick={() => setText(false)}
@@ -83,7 +88,7 @@ export default function Home() {
               </>
             )}
 
-            <div className="text-center">
+            <div className="text-center mb-5">
               <ButtonCom
                 btnLink="/survey-one/introduction"
                 btnName={"Acknowledged"}
