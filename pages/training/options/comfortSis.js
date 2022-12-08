@@ -10,6 +10,7 @@ export default function ComfortSis() {
     const timer = setTimeout(() => {
       setShowNextBtn(true);
     }, 23250);
+    //23250
     return () => clearTimeout(timer);
   }, []);
 
@@ -25,7 +26,7 @@ export default function ComfortSis() {
     <>
       <HeadComp title={"IET-Comfort Sis"} />
       <main className="flex flex-col items-center justify-center h-screen">
-        <div className="p-20 bg-dim-gray max-w-5xl rounded-md ">
+        <div className="px-20 py-16 bg-dim-gray max-w-5xl rounded-md ">
           <iframe
             src="https://geo.dailymotion.com/player/xaygu.html?video=x8fx213"
             allow="autoplay; fullscreen; picture-in-picture"
@@ -36,7 +37,7 @@ export default function ComfortSis() {
             className="pointer-events-none"
           ></iframe>
           {showNextBtn && (
-            <div className="flex items-center justify-center mt-2">
+            <div className="flex items-center justify-center mt-7 -mb-7">
               <ButtonCom btnName={"Next"} btnLink="../shane-school" />
             </div>
           )}
