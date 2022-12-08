@@ -1,7 +1,10 @@
 import React, { useEffect } from "react";
 import "regenerator-runtime";
 import { BsFillRecordCircleFill, BsFillSquareFill } from "react-icons/bs";
-import { AiOutlineAudio, AiOutlineAudioMuted } from "react-icons/ai";
+import {
+  AiOutlineAudioMuted,
+  AiFillAudio,
+} from "react-icons/ai";
 
 import SpeechRecognition, {
   useSpeechRecognition,
@@ -32,16 +35,20 @@ export default function Dictaphone({ setTranscript }) {
     <div className="flex [&>*]:m-1.5">
       <p>
         {listening ? (
-          <AiOutlineAudio className="h-4" />
+          <AiFillAudio className="h-4" />
         ) : (
           <AiOutlineAudioMuted className="h-4" />
         )}
       </p>
       <span>
-        <BsFillRecordCircleFill
-          className="h-4"
-          onClick={SpeechRecognition.startListening}
-        />{" "}
+        {listening ? (
+          <BsFillRecordCircleFill className="h-4 fill-red" />
+        ) : (
+          <BsFillRecordCircleFill
+            className="h-4"
+            onClick={SpeechRecognition.startListening}
+          />
+        )}
       </span>
       <BsFillSquareFill
         className="h-4"

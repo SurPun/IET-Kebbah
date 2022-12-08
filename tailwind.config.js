@@ -17,15 +17,39 @@ module.exports = {
 
       fontFamily: {
         roboto: ["Roboto", "sans-serif"],
-        'timer': ["Zen+Dots"],
-        'poppins': ['Poppins', 'sans-serif'],
+        timer: ["Zen+Dots"],
+        poppins: ["Poppins", "sans-serif"],
       },
+
+      fill: (theme) => ({
+        red: theme("colors.red.500"),
+      }),
     },
   },
   variants: {
-    display: ['children', 'default', 'children-first', 'children-last', 'children-odd', 'children-even', 'children-not-first', 'children-not-last', 'children-hover', 'hover', 'children-focus', 'focus', 'children-focus-within', 'focus-within', 'children-active', 'active', 'children-visited', 'visited', 'children-disabled', 'disabled', 'responsive'],
+    display: [
+      "children",
+      "default",
+      "children-first",
+      "children-last",
+      "children-odd",
+      "children-even",
+      "children-not-first",
+      "children-not-last",
+      "children-hover",
+      "hover",
+      "children-focus",
+      "focus",
+      "children-focus-within",
+      "focus-within",
+      "children-active",
+      "active",
+      "children-visited",
+      "visited",
+      "children-disabled",
+      "disabled",
+      "responsive",
+    ],
   },
-  plugins: [
-    require('tailwindcss-children'),
-  ],
+  plugins: [require("tailwindcss-children")],
 };
