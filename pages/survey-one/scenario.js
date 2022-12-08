@@ -3,6 +3,7 @@ import ButtonCom from "../../components/ButtonCom";
 import ScenarioTranscript from "../../public/textFiles/ScenarioTranscript";
 import HeadComp from "../../components/HeadComp";
 import { FaPhotoVideo } from "react-icons/fa"
+import { BiText } from "react-icons/bi"
 
 
 export default function Scenario() {
@@ -52,17 +53,21 @@ export default function Scenario() {
                 You will be given 5 seconds to read a question and then can type
                 your answer or speak into the microphone
               </p>
+
+              <div className="flex w-full justify-center text-center mt-5 mb-5 pt-3 items-baseline">
+                <BiText />
+                <button className="hover:underline text-black-500 hover:text-light-orange ml-2" onClick={() => setTranscript(true)}> Read transcript instead</button>
+                {/* <ButtonCom
+                    btnName={"Watch video instead"}
+                    BtnOnClick={() => setText(false)}
+                  /> */}
+              </div>
+
               <div className="flex items-center justify-center [&>*]:mr-3 mt-3">
                 <ButtonCom
                   btnName={"Start Survey"}
                   btnLink="questions" // SENDS US TO QUESTIONS
                   className="mr-1"
-                />
-                <ButtonCom
-                  btnName={"See Transcript"}
-                  BtnOnClick={() => {
-                    setTranscript(true);
-                  }}
                 />
               </div>
             </div>
