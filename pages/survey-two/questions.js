@@ -258,7 +258,7 @@ function questionOptions(
         <>
           <div className="flex flex-col items-center justify-items-center h-screen">
 
-            <div className="flex flex-col items-center justify-center w-1/4 m-auto">
+            <div className="flex flex-col items-center justify-center w-3/4 m-auto">
               <h2 className="text-center text-2xl text-white mt-auto p-6">
                 Thank you for completing the survey
               </h2>
