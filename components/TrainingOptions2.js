@@ -20,7 +20,7 @@ export default function TrainingOptions2() {
         <>
           <div className="min-h-screen p-40 backdrop-blur-3xl rounded-md absolute left-0 right-0 bottom-0 text-white">
             <h2 className="text-center font-bold mb-20 text-6xl">
-              Will you Accept the lift to school?
+              You've been offered a lift to school. Will you accept the lift?
             </h2>
             <div className="flex justify-content-center flex-col items-center">
               <CountdownTimer sec={30} />
