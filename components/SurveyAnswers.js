@@ -50,7 +50,7 @@ function SurveyAnswers({ userSurveyAnswers }) {
                 {userSurveyAnswers[0]?.s1q3}
               </td>
               <td className="w-4/12 px-3 bg-white ">
-                {userSurveyAnswers[1]?.s2q1}
+                {userSurveyAnswers[1]?.s2q3}
               </td>
             </tr>
           </tbody>
