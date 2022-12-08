@@ -161,7 +161,13 @@ function questionOptions(
             <CountdownTimer key={number} sec={30} />
           </div>
 
-          <p>1 out of 3</p>
+          <div className="flex gap-5 mb-2 ">
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-white"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-white"></div>
+          </div>
+
+          <p className="font-bold text-white mb-20">1 out of 3</p>
         </div>
       );
     case 2:
@@ -208,7 +214,13 @@ function questionOptions(
             <CountdownTimer key={number} sec={30} />
           </div>
 
-          <p>2 out of 3</p>
+          <div className="flex gap-5 mb-2 ">
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-white"></div>
+          </div>
+
+          <p className="font-bold text-white mb-20">2 out of 3</p>
         </div>
       );
     case 3:
@@ -241,7 +253,7 @@ function questionOptions(
               {transcript.length > 0 && (
                 <div className="flex justify-center">
                   <ButtonCom
-                    btnName={"Next question"}
+                    btnName={"Submit answers"}
                     BtnOnClick={handleSubmit((data) => {
                       setTranscript("");
                       setQuestionNumber(0);
@@ -256,7 +268,13 @@ function questionOptions(
             <CountdownTimer key={number} sec={30} />
           </div>
 
-          <p>3 out of 3</p>
+          <div className="flex gap-5 mb-2 ">
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+          </div>
+
+          <p className="font-bold text-white mb-20">3 out of 3</p>
         </div>
       );
     case 0:
