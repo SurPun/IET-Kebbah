@@ -113,7 +113,14 @@ function questionOptions(
           <div className="flex h-80 flex-col items-center children:py-4 pb-12">
             <CountdownTimer key={number} sec={30} />
           </div>
-          <p>1 out of 3</p>
+
+          <div className="flex gap-5 mb-2 ">
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-white"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-white"></div>
+          </div>
+
+          <p className="font-bold text-white mb-20">1 out of 3</p>
         </div>
       );
     case 2:
@@ -159,7 +166,14 @@ function questionOptions(
           <div className="flex h-80 flex-col items-center children:py-4 pb-12">
             <CountdownTimer key={number} sec={30} />
           </div>
-          <p>2 out of 3</p>
+
+          <div className="flex gap-5 mb-2 ">
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-white"></div>
+          </div>
+
+          <p className="font-bold text-white mb-20">2 out of 3</p>
         </div>
       );
     case 3:
@@ -206,7 +220,14 @@ function questionOptions(
           <div className="flex h-80 flex-col items-center children:py-4 pb-12">
             <CountdownTimer key={number} sec={30} />
           </div>
-          <p>3 out of 3</p>
+
+          <div className="flex gap-5 mb-2 ">
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+          </div>
+
+          <p className="font-bold text-white mb-20">3 out of 3</p>
         </div>
       );
     case 0:
