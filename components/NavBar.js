@@ -24,6 +24,9 @@ export default function NavBar() {
         <li className="mr-6 hover:text-light-orange  text-white hover:font-medium">
           <Link href="/about">About</Link>
         </li>
+        <li className="mr-6 hover:text-light-orange  text-white hover:font-medium">
+          <Link href="/resource">Resources</Link>
+        </li>
       </div>
     </header>
   );
