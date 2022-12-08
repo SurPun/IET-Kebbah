@@ -79,7 +79,7 @@ function questionOptions(
 
           <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md w-1/2 h-1/3 m-auto">
             {loaded && (
-              <Dictaphone  setTranscript={setTranscript} />
+              <Dictaphone setTranscript={setTranscript} />
             )}
 
             <form className="">
@@ -209,7 +209,7 @@ function questionOptions(
       return (
         <>
           <div className="flex flex-col items-center justify-items-center h-screen">
-            <div className="flex flex-col items-center justify-center w-1/4 m-auto">
+            <div className="flex flex-col items-center justify-center w-3/4 m-auto">
               <h2 className="text-center text-2xl text-white mt-auto p-6">
                 Thank you for completing the survey
               </h2>
