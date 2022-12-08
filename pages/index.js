@@ -88,7 +88,7 @@ export default function Home() {
               </>
             )}
 
-            <div className="text-center mb-5">
+            <div className="text-center mb-5 flex flex-col rounded-lg bg-dim-gray items-center ">
               <ButtonCom
                 btnLink="/survey-one/introduction"
                 btnName={"Acknowledged"}
