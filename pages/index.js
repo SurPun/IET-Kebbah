@@ -4,7 +4,8 @@ import NavBar from "../components/NavBar";
 import ButtonCom from "../components/ButtonCom";
 import { useState, useEffect } from "react";
 import IntroToTraining from "../public/textFiles/IntroToTraining";
-
+import { FaPhotoVideo } from "react-icons/fa"
+import { BiText } from "react-icons/bi"
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
   const [text, setText] = useState(false);
@@ -54,15 +55,17 @@ export default function Home() {
 
             {text ? (
               <div>
-                <div className="max-w-4xl text-justify m-auto text-6xl">
+                <div className="max-w-5xl text-justify m-auto text-6xl ">
                   <IntroToTraining />
                 </div>
 
-                <div className="text-center mt-5 mb-10 pt-3">
-                  <ButtonCom
+                <div className="flex w-full justify-center text-center mt-5 mb-5 pt-3 items-baseline">
+                  <FaPhotoVideo />
+                  <button className="hover:underline text-black-500 hover:text-light-orange ml-2" onClick={() => setText(false)}> Watch video instead</button>
+                  {/* <ButtonCom
                     btnName={"Watch video instead"}
                     BtnOnClick={() => setText(false)}
-                  />
+                  /> */}
                 </div>
               </div>
             ) : (
@@ -78,13 +81,21 @@ export default function Home() {
                     className="pointer-events-none"
                   ></iframe>
                 </div>
+                <div className="flex w-full justify-center text-center mt-5 mb-5 pt-3 items-baseline">
+                  <BiText />
+                  <button className="hover:underline text-black-500 hover:text-light-orange ml-2" onClick={() => setText(true)}> Read transcript instead</button>
+                  {/* <ButtonCom
+                    btnName={"Watch video instead"}
+                    BtnOnClick={() => setText(false)}
+                  /> */}
+                </div>
+                {/* <div className="text-center pb-4 mb-5">
 
-                <div className="text-center pb-4 mb-5">
                   <ButtonCom
                     btnName={"Read transcript instead"}
                     BtnOnClick={() => setText(true)}
                   />
-                </div>
+                </div> */}
               </>
             )}
 
