@@ -12,6 +12,7 @@ export default function TrainingOptions() {
     const timer = setTimeout(() => {
       setShowModal(true);
     }, 40000);
+    //40000
     return () => clearTimeout(timer);
   }, []);
 
