@@ -9,7 +9,7 @@ export default function ComfortMom() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowNextBtn(true);
-    }, 3000);
+    }, 13500);
     //13500
     return () => clearTimeout(timer);
   }, []);

@@ -12,6 +12,7 @@ export default function TrainingOptions() {
     const timer = setTimeout(() => {
       setShowModal(true);
     }, 40000);
+    //40000
     return () => clearTimeout(timer);
   }, []);
 
@@ -39,7 +40,7 @@ export default function TrainingOptions() {
                       width={180}
                     />
                   </div>
-                  <div className="mt-5">
+                  <div className="mt-5 flex justify-center text-center">
                     <ButtonCom
                       btnName={"Comfort Mum"}
                       btnLink="./options/comfortMum" // SENDS US TO QUESTIONS
@@ -57,7 +58,7 @@ export default function TrainingOptions() {
                       width={180}
                     />
                   </div>
-                  <div className="mt-5">
+                  <div className="mt-5 flex justify-center text-center ">
                     <ButtonCom
                       btnName={"Comfort Sister"}
                       btnLink="./options/comfortSis" // SENDS US TO QUESTIONS
@@ -75,7 +76,7 @@ export default function TrainingOptions() {
                       width={180}
                     />
                   </div>
-                  <div className="mt-5">
+                  <div className="mt-5 flex justify-center text-center">
                     <ButtonCom
                       btnName={"Chase After Dad"}
                       btnLink="./options/chaseDad" // SENDS US TO QUESTIONS
