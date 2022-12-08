@@ -42,7 +42,7 @@ export default function CountdownTimer({ sec }) {
               ></path>
             </svg>
             <div>
-              <span className="font-medium">Time up alert!</span> Please type or
+              <span className="font-medium">Time Up!</span> Please type or
               select your answer now...
             </div>
           </div>
