@@ -2,14 +2,16 @@
 
 ## Core
 
-- [ ] As a user, I would...
-- [ ] As a user, I would...
-- [ ] As a user, I would...
+- [x] As a user, I would like to have an immersive experience, so I can look at situations from a different perspective to minimise prejudice.
+
+- [x] As a user, I would like to gain an understanding of my potential unconscious bias prior and post training.
+
+- [x] As a user, I would access to more information and resources about the issues the black community face with the policing system.
 
 ## Stretch
 
-- [ ] As a user, I would...
-- [ ] As a user, I would...
+- [x] As a user, I would like to have to option to contact the product owner and provide feedback of my experience. 
+- [x] As a user, I would like to have a more hands-on way to interact with the training programme.
 
 ## Getting Started
 
