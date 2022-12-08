@@ -26,7 +26,7 @@ export default function ContactForm() {
 
   return (
     <div>
-      <form onSubmit={onSubmit} className="[&>*]:mb-3 flex">
+      <form onSubmit={onSubmit} className="[&>*]:mb-3 flex [&>*]:h-10">
         <input type="text" name="name" placeholder="name..." className="mr-5" />
 
         <input

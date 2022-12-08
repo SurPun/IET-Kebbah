@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function ButtonCom({
   btnName,
   btnLink = "",
-  BtnOnClick = () => { },
+  BtnOnClick = () => {},
 }) {
   return (
     <Link
