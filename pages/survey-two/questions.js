@@ -39,7 +39,7 @@ export default function Questions() {
     let surveyDataToSubmit = {
       fields: { ...previousAnswers, ...currentAnswers },
     };
-    console.log(surveyDataToSubmit);
+    console.log({ surveyDataToSubmit });
     setSurveyData(surveyDataToSubmit);
   }, [completed]);
 
@@ -258,6 +258,7 @@ function questionOptions(
                       setTranscript("");
                       setQuestionNumber(0);
                       setAnswer({ ...answer, s2q3: data.answer3 });
+                      setCompleted(true)
                     })}
                   />
                 </div>
