@@ -11,7 +11,7 @@ export default function TrainingOptions() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowModal(true);
-    }, 4000);
+    }, 40000);
     return () => clearTimeout(timer);
   }, []);
 
