@@ -10,21 +10,21 @@ export default function Resource() {
       <HeadComp title={"IET Resources"} />
       <NavBar />
       <main>
-        <div className="flex justify-center mt-20 relative">
+        <div className="flex justify-center mt-5 relative ">
           <div>
             <Image
-              className="rounded-lg h-full"
+              className="max-w-md h-full rounded-lg"
               src="/IET/iceberg.png"
               alt="image of icerberg"
-              height={700}
-              width={550}
+              height={300}
+              width={600}
             />
 
-            <div className="ml-6  text-dim-grey text-justify leading-8 absolute top-0 text-sm">
-              <h2 className="text-4xl font-bold mt-10">
+            <div className="ml-6  text-dim-grey leading-8 absolute top-0 text-sm">
+              <h2 className="text-2xl font-bold mt-10">
                 Additional Resources Links
               </h2>
-              <ol className="text-black text-1xl mt-10 text-lg leading-10 underline ">
+              <ol className="text-black mt-10 text-s leading-10 underline ">
                 <li className="hover:text-light-orange bg-white px-4 rounded-lg mb-2">
                   {" "}
                   <Link href="https://rb.gy/uc0jnw">
@@ -61,7 +61,7 @@ export default function Resource() {
           <iframe
             className="rounded-lg"
             src="https://airtable.com/embed/shrkiPRE11Zoj3rc5?backgroundColor=green"
-            height={658}
+            height={535}
             width={550}
           ></iframe>
         </div>
