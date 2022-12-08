@@ -1,6 +1,7 @@
 import NavBar from "../components/NavBar";
 import HeadComp from "../components/HeadComp";
 import Link from "next/link";
+import ContactForm from "../components/ContactForm";
 
 export default function About() {
   return (
@@ -49,14 +50,7 @@ export default function About() {
           <h3 className="text-lg font-bold underline underline-offset-2">
             Contact:
           </h3>
-
-          <Link className="text-base" href="mailto:kebbah@caiushouse.org">
-            Email: kebbah@caiushouse.org <br />
-          </Link>
-
-          <Link className="text-base" href="tel:+44(0)7723115127">
-            Tel: +44(0)7723-115-127
-          </Link>
+          <ContactForm />
         </div>
       </main>
     </>
