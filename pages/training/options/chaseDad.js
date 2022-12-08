@@ -10,6 +10,7 @@ export default function ChaseDad() {
     const timer = setTimeout(() => {
       setShowNextBtn(true);
     }, 33250);
+    //33250
     return () => clearTimeout(timer);
   }, []);
 
@@ -25,7 +26,7 @@ export default function ChaseDad() {
     <>
       <HeadComp title={"IET-Chase Dad"} />
       <main className="flex flex-col items-center justify-center h-screen">
-        <div className="p-20 bg-dim-gray max-w-5xl rounded-md ">
+        <div className="px-20 py-16 bg-dim-gray max-w-5xl rounded-md ">
           <iframe
             src="https://geo.dailymotion.com/player/xaygu.html?video=x8fx217"
             allow="autoplay; fullscreen; picture-in-picture"
@@ -37,7 +38,7 @@ export default function ChaseDad() {
           ></iframe>
 
           {showNextBtn && (
-            <div className="flex items-center justify-center mt-2">
+            <div className="flex items-center justify-center mt-7 -mb-7">
               <ButtonCom btnName={"Next"} btnLink="../shane-school" />
             </div>
           )}

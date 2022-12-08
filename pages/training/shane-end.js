@@ -25,7 +25,7 @@ export default function ShaneEnd() {
       <HeadComp title={"Shane End"} />
       {/* Google Drive Src */}
       <main className="flex flex-col items-center justify-center h-screen">
-        <div className="p-20 bg-dim-gray max-w-5xl rounded-md ">
+        <div className="px-20 py-16 bg-dim-gray max-w-5xl rounded-md ">
           <iframe
             src="https://geo.dailymotion.com/player/xaygu.html?video=x8fx6b9"
             allow="autoplay; fullscreen; picture-in-picture"
@@ -37,7 +37,7 @@ export default function ShaneEnd() {
           ></iframe>
 
           {showNextBtn && (
-            <div className="flex items-center justify-center [&>*]:mr-3 mt-3">
+            <div className="flex items-center justify-center mt-7 -mb-7">
               <ButtonCom btnName={"End"} btnLink="/survey-two/introduction" />
             </div>
           )}

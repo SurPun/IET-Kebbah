@@ -119,19 +119,21 @@ function questionOptions(
   switch (number) {
     case 1:
       return (
-        <div className="flex flex-col items-center justify-center h-screen my-auto">
-          <h2 className="text-center text-2xl text-white mt-auto">
+        <div className="flex flex-col items-center justify-center h-screen my-auto pt-10">
+          <h2 className="text-center text-2xl text-white mt-auto mb-10">
             1. What is the first thing you will say to him?
           </h2>
 
-          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md w-1/2 m-auto [&>*]:p-3">
-            {loaded && <Dictaphone setTranscript={setTranscript} />}
+          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md px-5 py-5 m-auto">
+            <div className="pb-5">
+              {loaded && <Dictaphone setTranscript={setTranscript} />}
+            </div>
 
             <form>
               <textarea
-                className="text-center rounded mb-3 pt-10 px-10"
-                cols="40"
-                rows="2"
+                className="mx-10 text-center rounded mb-3 pt-10 px-10"
+                cols="50"
+                rows="5"
                 value={transcript}
                 key="q1"
                 {...register("answer1")}
@@ -159,24 +161,32 @@ function questionOptions(
             <CountdownTimer key={number} sec={30} />
           </div>
 
-          <p>1 out of 3</p>
+          <div className="flex gap-5 mb-2 ">
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-white"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-white"></div>
+          </div>
+
+          <p className="font-bold text-white mb-20">1 out of 3</p>
         </div>
       );
     case 2:
       return (
-        <div className="flex flex-col items-center justify-center h-screen my-auto">
-          <h2 className="text-center text-2xl text-white mt-auto">
+        <div className="flex flex-col items-center justify-center h-screen my-auto pt-10">
+          <h2 className="text-center text-2xl text-white mt-auto mb-10">
             2. What assumptions will you make of him?
           </h2>
 
-          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md w-1/2 m-auto [&>*]:p-3">
-            {loaded && <Dictaphone setTranscript={setTranscript} />}
+          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md px-5 py-5 m-auto">
+            <div className="pb-5">
+              {loaded && <Dictaphone setTranscript={setTranscript} />}
+            </div>
 
             <form>
               <textarea
-                className="text-center rounded mb-3 pt-10 px-10"
-                cols="40"
-                rows="2"
+                className="mx-10 text-center rounded mb-3 pt-10 px-10"
+                cols="50"
+                rows="5"
                 value={transcript}
                 key="q2"
                 {...register("answer2")}
@@ -204,25 +214,33 @@ function questionOptions(
             <CountdownTimer key={number} sec={30} />
           </div>
 
-          <p>2 out of 3</p>
+          <div className="flex gap-5 mb-2 ">
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-white"></div>
+          </div>
+
+          <p className="font-bold text-white mb-20">2 out of 3</p>
         </div>
       );
     case 3:
       return (
-        <div className="flex flex-col items-center justify-center h-screen my-auto">
-          <h2 className="text-center text-2xl text-white mt-auto">
-            3. Will your main objective be to stop and search or stop and account
-            and why?
+        <div className="flex flex-col items-center justify-center h-screen my-auto pt-10">
+          <h2 className="text-center text-2xl text-white mt-auto mb-10">
+            3. Will your main objective be to stop and search or stop and
+            account and why?
           </h2>
 
-          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md w-1/2 m-auto [&>*]:p-3">
-            {loaded && <Dictaphone setTranscript={setTranscript} />}
+          <div className="flex flex-col bg-dim-gray items-center justify-center rounded-md px-5 py-5 m-auto">
+            <div className="pb-5">
+              {loaded && <Dictaphone setTranscript={setTranscript} />}
+            </div>
 
             <form>
               <textarea
-                className="text-center rounded mb-3 pt-10 px-10"
-                cols="40"
-                rows="2"
+                className="mx-10 text-center rounded mb-3 pt-10 px-10"
+                cols="50"
+                rows="5"
                 value={transcript}
                 key="q3"
                 {...register("answer3")}
@@ -235,7 +253,7 @@ function questionOptions(
               {transcript.length > 0 && (
                 <div className="flex justify-center">
                   <ButtonCom
-                    btnName={"Next question"}
+                    btnName={"Submit answers"}
                     BtnOnClick={handleSubmit((data) => {
                       setTranscript("");
                       setQuestionNumber(0);
@@ -250,24 +268,33 @@ function questionOptions(
             <CountdownTimer key={number} sec={30} />
           </div>
 
-          <p>3 out of 3</p>
+          <div className="flex gap-5 mb-2 ">
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+            <div className="rounded-full border-2 flex p-2 relative bg-sky-500"></div>
+          </div>
+
+          <p className="font-bold text-white mb-20">3 out of 3</p>
         </div>
       );
     case 0:
       return (
         <>
           <div className="flex flex-col items-center justify-items-center h-screen">
-
-            <div className="flex flex-col items-center justify-center w-3/4 m-auto">
+            <div className="flex flex-col items-center justify-center w-1/4 m-auto">
               <h2 className="text-center text-2xl text-white mt-auto p-6">
                 Thank you for completing the survey
               </h2>
-              <ButtonCom btnName={"Finish training"} btnLink="/training-end" BtnOnClick={() => sendData(surveyData)} />
+              <ButtonCom
+                btnName={"Finish training"}
+                btnLink="/training-end"
+                BtnOnClick={() => sendData(surveyData)}
+              />
             </div>
             <p>End of survey two</p>
           </div>
         </>
-      )
+      );
     // (
     //   <>
     //     <h2>You've completed this survey</h2>
