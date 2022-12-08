@@ -120,7 +120,7 @@ function questionOptions(
     case 1:
       return (
         <div className="flex flex-col items-center justify-center h-screen my-auto pt-10">
-          <h2 className="text-center text-2xl text-white mt-auto mb-10">
+          <h2 className="text-center text-2xl text-white mt-20 mb-2 font-bold">
             1. What is the first thing you will say to him?
           </h2>
 
@@ -173,7 +173,7 @@ function questionOptions(
     case 2:
       return (
         <div className="flex flex-col items-center justify-center h-screen my-auto pt-10">
-          <h2 className="text-center text-2xl text-white mt-auto mb-10">
+          <h2 className="text-center text-2xl text-white mt-20 mb-2 font-bold">
             2. What assumptions will you make of him?
           </h2>
 
@@ -226,7 +226,7 @@ function questionOptions(
     case 3:
       return (
         <div className="flex flex-col items-center justify-center h-screen my-auto pt-10">
-          <h2 className="text-center text-2xl text-white mt-auto mb-10">
+          <h2 className="text-center text-2xl text-white mt-20 mb-2 font-bold">
             3. Will your main objective be to stop and search or stop and
             account and why?
           </h2>
