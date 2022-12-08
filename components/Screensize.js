@@ -16,9 +16,9 @@ export default function Screensize() {
           />
         </div>
 
-        <p>
-          This experience has been designed for larger browser windows. To
-          continue please try:
+        <p className="text-justify">
+          Not suitable for mobile. This experience has been designed for larger
+          browser windows. To continue please try:
         </p>
 
         <ul className=" text-base ">
