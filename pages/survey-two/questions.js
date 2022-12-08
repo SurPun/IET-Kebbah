@@ -309,5 +309,3 @@ function questionOptions(
     // );
   }
 }
-
-//
