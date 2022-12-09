@@ -13,7 +13,7 @@ export default function Iceberg() {
         <div class="flex items-center justify-center h-screen">
           <Image
             className="rounded-lg"
-            src="/IET/perception Iceburg.jpg"
+            src="/IET/perception-Iceberg.jpg"
             alt="perception icerberg"
             height={900}
             width={1000}
