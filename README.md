@@ -1,4 +1,4 @@
-# IET Kebbah - Immersive Empathy Training
+# Founders & Coders (Tech For Better Project) - IET Kebbah (Immersive Empathy Training)
 
 ## Core
 
